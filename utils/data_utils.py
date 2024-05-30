@@ -317,21 +317,38 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
         elif dataset == 'power':
             adj, features,labels,G = load_synthetic_md_data(dataset, False, data_path)[:4]
             val_prop, test_prop = 0.10, 0.60
-            if labels.ndim > 1:
-                labels = labels.argmax(axis=1)
+
         else:
             raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
         idx_val, idx_test, idx_train = split_data(labels, val_prop, test_prop, seed=split_seed)
 
-    labels = torch.LongTensor(labels)
+    # Asegurarse de que las etiquetas son un vector
+    if labels.ndim > 1:
+        labels = labels.argmax(axis=1)
+
+    # Convertir labels a tensor de PyTorch antes de usar torch.unique
+    labels = torch.tensor(labels)
+
     # Imprimir las dimensiones de los datos
     print(f'adj shape: {adj.shape}')
     print(f'features shape: {features.shape}')
     print(f'labels shape: {labels.shape}')
-    num_classes = len(torch.unique(labels))
-    print(f'Number of classes: {num_classes}')
 
-    
+    # Calcular el número de clases usando etiquetas únicas
+    num_classes_unique = len(torch.unique(labels))
+    print(f'Number of unique classes: {num_classes_unique}')
+
+    # Calcular el número de clases usando el valor máximo de las etiquetas
+    num_classes_max = int(labels.max().item() + 1)
+    print(f'Number of classes based on max label value: {num_classes_max}')
+
+    # Imprimir todas las etiquetas únicas y su conteo
+    unique_labels, counts = torch.unique(labels, return_counts=True)
+    print(f'Unique labels: {unique_labels}')
+    print(f'Counts of unique labels: {counts}')
+
+    labels = torch.LongTensor(labels)
+
     data = {'adj_train': adj, 'features': features, 'labels': labels, 'idx_train': idx_train, 'idx_val': idx_val, 'idx_test': idx_test}
     return data
 
