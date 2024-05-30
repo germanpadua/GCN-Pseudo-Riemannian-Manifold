@@ -316,7 +316,7 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
             val_prop, test_prop = 0.10, 0.60
         elif dataset == 'power':
             adj, features,labels,G = load_synthetic_md_data(dataset, False, data_path)[:4]
-            val_prop, test_prop = 0.10, 0.80
+            val_prop, test_prop = 0.10, 0.60
             if labels.ndim > 1:
                 labels = labels.argmax(axis=1)
         else:
@@ -327,6 +327,8 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
     print(f'adj shape: {adj.shape}')
     print(f'features shape: {features.shape}')
     print(f'labels shape: {labels.shape}')
+    num_classes = len(torch.unique(labels))
+    print(f'Number of classes: {num_classes}')
 
     labels = torch.LongTensor(labels)
     data = {'adj_train': adj, 'features': features, 'labels': labels, 'idx_train': idx_train, 'idx_val': idx_val, 'idx_test': idx_test}
