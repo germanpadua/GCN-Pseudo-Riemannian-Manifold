@@ -260,6 +260,8 @@ def load_data_lp(dataset, use_feats, data_path):
         adj, features = load_synthetic_data(dataset, use_feats, data_path)[:2]
     elif dataset == 'airport':
         adj, features = load_data_airport(dataset, data_path, return_label=False)
+    elif dataset == 'power':
+        adj, features, labels, G = load_synthetic_md_data(dataset, False, data_path)[:4]
     else:
         raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
     data = {'adj_train': adj, 'features': features}
@@ -312,6 +314,9 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
         elif dataset == 'deezer':
             dj, features, labels = load_json_data(dataset, use_feats, data_path)
             val_prop, test_prop = 0.10, 0.60
+        elif dataset == 'power':
+            adj, features,labels,G = load_synthetic_md_data(dataset, False, data_path)[:4]
+            val_prop, test_prop = 0.10, 0.5
         else:
             raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
         idx_val, idx_test, idx_train = split_data(labels, val_prop, test_prop, seed=split_seed)
