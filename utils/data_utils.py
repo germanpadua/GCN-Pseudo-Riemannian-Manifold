@@ -321,6 +321,11 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
             raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
         idx_val, idx_test, idx_train = split_data(labels, val_prop, test_prop, seed=split_seed)
 
+    # Imprimir las dimensiones de los datos
+    print(f'adj shape: {adj.shape}')
+    print(f'features shape: {features.shape}')
+    print(f'labels shape: {labels.shape}')
+
     labels = torch.LongTensor(labels)
     data = {'adj_train': adj, 'features': features, 'labels': labels, 'idx_train': idx_train, 'idx_val': idx_val, 'idx_test': idx_test}
     return data
