@@ -316,7 +316,9 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
             val_prop, test_prop = 0.10, 0.60
         elif dataset == 'power':
             adj, features,labels,G = load_synthetic_md_data(dataset, False, data_path)[:4]
-            val_prop, test_prop = 0.10, 0.85
+            val_prop, test_prop = 0.10, 0.80
+            if labels.ndim > 1:
+                labels = labels.argmax(axis=1)
         else:
             raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
         idx_val, idx_test, idx_train = split_data(labels, val_prop, test_prop, seed=split_seed)
