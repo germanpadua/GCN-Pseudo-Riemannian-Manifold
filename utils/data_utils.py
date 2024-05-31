@@ -11,6 +11,18 @@ import torch.nn.functional as F
 from .preprocessing import *
 import random
 
+from sklearn.decomposition import TruncatedSVD
+def reduce_dimensionality(features, n_components=100):
+    svd = TruncatedSVD(n_components=n_components)
+    reduced_features = svd.fit_transform(features)
+    return reduced_features
+
+def map_labels_to_consecutive(labels):
+    unique_labels = torch.unique(labels)
+    label_map = {old_label.item(): new_label for new_label, old_label in enumerate(unique_labels)}
+    mapped_labels = torch.tensor([label_map[label.item()] for label in labels])
+    return mapped_labels
+
 def load_data(args, datapath):
     if args.task == 'nc':
         data = load_data_nc(args.dataset, args.use_feats, datapath, args.split_seed)
@@ -316,7 +328,9 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
             val_prop, test_prop = 0.10, 0.60
         elif dataset == 'power':
             adj, features,labels,G = load_synthetic_md_data(dataset, False, data_path)[:4]
-            val_prop, test_prop = 0.15, 0.80
+            val_prop, test_prop = 0.10, 0.60
+            #features = reduce_dimensionality(features, n_components=20)
+            #features = torch.FloatTensor(features)
 
         else:
             raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
@@ -328,6 +342,9 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
 
     # Convertir labels a tensor de PyTorch antes de usar torch.unique
     labels = torch.tensor(labels)
+
+    # Mapear etiquetas a valores consecutivos
+    labels = map_labels_to_consecutive(labels)
 
     # Imprimir las dimensiones de los datos
     print(f'adj shape: {adj.shape}')
