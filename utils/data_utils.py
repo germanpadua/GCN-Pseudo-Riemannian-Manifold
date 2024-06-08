@@ -11,6 +11,7 @@ import torch.nn.functional as F
 from .preprocessing import *
 import random
 import scipy.io as sio
+from sklearn.preprocessing import StandardScaler
 
 
 from sklearn.decomposition import TruncatedSVD
@@ -142,21 +143,16 @@ def split_data(labels, val_prop, test_prop, seed):
     np.random.seed(seed)
     nb_nodes = labels.shape[0]
     all_idx = np.arange(nb_nodes)
-    pos_idx = labels.nonzero()[0]
-    neg_idx = (1. - labels).nonzero()[0]
+    pos_idx = np.where(labels >= 0)[0]  # Suponiendo que las etiquetas negativas no son válidas
     np.random.shuffle(pos_idx)
-    np.random.shuffle(neg_idx)
-    pos_idx = pos_idx.tolist()
-    neg_idx = neg_idx.tolist()
-    nb_pos_neg = min(len(pos_idx), len(neg_idx))
-    nb_val = round(val_prop * nb_pos_neg)
-    nb_test = round(test_prop * nb_pos_neg)
-    idx_val_pos, idx_test_pos, idx_train_pos = pos_idx[:nb_val], pos_idx[nb_val:nb_val + nb_test], pos_idx[
-                                                                                                   nb_val + nb_test:]
-    idx_val_neg, idx_test_neg, idx_train_neg = neg_idx[:nb_val], neg_idx[nb_val:nb_val + nb_test], neg_idx[
-                                                                                                   nb_val + nb_test:]
-    return idx_val_pos + idx_val_neg, idx_test_pos + idx_test_neg, idx_train_pos + idx_train_neg
-
+    
+    nb_val = round(val_prop * len(pos_idx))
+    nb_test = round(test_prop * len(pos_idx))
+    idx_val = pos_idx[:nb_val]
+    idx_test = pos_idx[nb_val:nb_val + nb_test]
+    idx_train = pos_idx[nb_val + nb_test:]
+    
+    return idx_train, idx_val, idx_test
 
 def bin_feat(feat, bins):
     digitized = np.digitize(feat, bins)
@@ -274,6 +270,8 @@ def load_data_lp(dataset, use_feats, data_path):
         adj, features = load_synthetic_data(dataset, use_feats, data_path)[:2]
     elif dataset == 'airport':
         adj, features = load_data_airport(dataset, data_path, return_label=False)
+    elif dataset == 'photo':
+        adj, features, labels = load_data_amazon_photo(data_path, return_label=False)
     elif dataset == 'power':
         adj, features, labels, G = load_synthetic_md_data(dataset, False, data_path)[:4]
     else:
@@ -333,6 +331,9 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
             val_prop, test_prop = 0.10, 0.60
             #features = reduce_dimensionality(features, n_components=20)
             #features = torch.FloatTensor(features)
+        elif dataset == 'photo':
+            adj, features, labels = load_data_amazon_photo(data_path, return_label=True)
+            val_prop, test_prop = 0.15, 0.15
 
         else:
             raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
@@ -522,62 +523,38 @@ def load_airport(dataset_str, data_path, return_label=False):
     else:
         return sp.csr_matrix(adj), features
 
+def load_data_amazon_photo(data_path, return_label=False):
+    # Cargar datos desde el archivo .npz
+    data = np.load(os.path.join(data_path, 'amazon_electronics_photo.npz'))
+    
+    # Extraer la matriz de adyacencia
+    adj_matrix = sp.csr_matrix((data['adj_data'], data['adj_indices'], data['adj_indptr']), shape=data['adj_shape'])
+    
+    # Extraer las características de los nodos
+    features = sp.csr_matrix((data['attr_data'], data['attr_indices'], data['attr_indptr']), shape=data['attr_shape'])
+    
+    # Extraer las etiquetas
+    labels = data['labels']
 
-def load_data_uk(dataset_str, data_path, task='link_prediction'):
-    # Definir el dispositivo
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    # Convertir las características a formato denso
+    features = features.toarray()
+    
+    # Normalizar las características
+    scaler = StandardScaler()
+    features = scaler.fit_transform(features)
 
-    # Ruta de los archivos
-    raw_dir = os.path.join(data_path, dataset_str, "raw")
+    # Convertir las características a tensor
+    features = torch.tensor(features, dtype=torch.float)
 
-    # Cargar los datos necesarios
-    edge_order = sio.loadmat(os.path.join(raw_dir, 'blist.mat'))["bList"] - 1
-    node_f = sio.loadmat(os.path.join(raw_dir, 'Bf.mat'))['B_f_tot']
-    edge_f = sio.loadmat(os.path.join(raw_dir, 'Ef.mat'))['E_f_post']
+    # Convertir las etiquetas a tensor
+    labels = torch.tensor(labels, dtype=torch.long)
 
-    # Inicializar listas para los datos
-    adj_list = []
-    features_list = []
+    return sp.csr_matrix(adj_matrix), features, labels
 
-    for i in range(len(node_f)):
-        # Obtener características de nodos
-        x = torch.tensor(node_f[i][0], dtype=torch.float32).reshape([-1, 3]).to(device)
+def check_npz_file(file_path):
+    data = np.load(file_path)
+    print("Keys in the npz file:", list(data.keys()))
 
-        # Obtener características de aristas
-        f = torch.tensor(edge_f[i][0], dtype=torch.float32)
-        cont = [j for j in range(len(f)) if np.all(np.array(f[j])) == 0]
-        f_tot = th_delete(f, cont).reshape([-1, 4]).type(torch.float32)
-        f_totw = torch.cat((f_tot, f_tot), 0).to(device)
-
-        # Obtener el índice de aristas
-        edge_iw = th_delete(torch.tensor(edge_order, dtype=torch.long), cont).reshape(-1, 2)
-        edge_iwr = torch.fliplr(edge_iw)
-        edge_iw = torch.cat((edge_iw, edge_iwr), 0).t().contiguous().to(device)
-
-        # Crear la matriz de adyacencia
-        adj = from_edge_index_to_adj(edge_iw, None, x.size(0)).to_dense()
-        adj_list.append(adj)
-        features_list.append(x)
-
-    # Convertir listas a matrices
-    adj = sp.csr_matrix(np.array([a.cpu().numpy() for a in adj_list]))
-    features = torch.cat(features_list, dim=0).cpu().numpy()
-
-    return adj, features
-
-
-# Función auxiliar para convertir edge_index a matriz de adyacencia
-def from_edge_index_to_adj(edge_index, edge_attr, num_nodes):
-    adj = torch.zeros((num_nodes, num_nodes), dtype=torch.float)
-    adj[edge_index[0], edge_index[1]] = 1
-    return adj
-
-
-# Función auxiliar para eliminar filas/columnas de un tensor
-def th_delete(tensor, indices):
-    mask = torch.ones(tensor.size(), dtype=torch.bool)
-    mask[indices] = False
-    return tensor[mask]
 
 
 import networkx as nx
