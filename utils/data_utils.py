@@ -10,6 +10,8 @@ import torch
 import torch.nn.functional as F
 from .preprocessing import *
 import random
+import scipy.io as sio
+
 
 from sklearn.decomposition import TruncatedSVD
 def reduce_dimensionality(features, n_components=100):
@@ -519,6 +521,63 @@ def load_airport(dataset_str, data_path, return_label=False):
         return sp.csr_matrix(adj), features, labels
     else:
         return sp.csr_matrix(adj), features
+
+
+def load_data_uk(dataset_str, data_path, task='link_prediction'):
+    # Definir el dispositivo
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+    # Ruta de los archivos
+    raw_dir = os.path.join(data_path, dataset_str, "raw")
+
+    # Cargar los datos necesarios
+    edge_order = sio.loadmat(os.path.join(raw_dir, 'blist.mat'))["bList"] - 1
+    node_f = sio.loadmat(os.path.join(raw_dir, 'Bf.mat'))['B_f_tot']
+    edge_f = sio.loadmat(os.path.join(raw_dir, 'Ef.mat'))['E_f_post']
+
+    # Inicializar listas para los datos
+    adj_list = []
+    features_list = []
+
+    for i in range(len(node_f)):
+        # Obtener características de nodos
+        x = torch.tensor(node_f[i][0], dtype=torch.float32).reshape([-1, 3]).to(device)
+
+        # Obtener características de aristas
+        f = torch.tensor(edge_f[i][0], dtype=torch.float32)
+        cont = [j for j in range(len(f)) if np.all(np.array(f[j])) == 0]
+        f_tot = th_delete(f, cont).reshape([-1, 4]).type(torch.float32)
+        f_totw = torch.cat((f_tot, f_tot), 0).to(device)
+
+        # Obtener el índice de aristas
+        edge_iw = th_delete(torch.tensor(edge_order, dtype=torch.long), cont).reshape(-1, 2)
+        edge_iwr = torch.fliplr(edge_iw)
+        edge_iw = torch.cat((edge_iw, edge_iwr), 0).t().contiguous().to(device)
+
+        # Crear la matriz de adyacencia
+        adj = from_edge_index_to_adj(edge_iw, None, x.size(0)).to_dense()
+        adj_list.append(adj)
+        features_list.append(x)
+
+    # Convertir listas a matrices
+    adj = sp.csr_matrix(np.array([a.cpu().numpy() for a in adj_list]))
+    features = torch.cat(features_list, dim=0).cpu().numpy()
+
+    return adj, features
+
+
+# Función auxiliar para convertir edge_index a matriz de adyacencia
+def from_edge_index_to_adj(edge_index, edge_attr, num_nodes):
+    adj = torch.zeros((num_nodes, num_nodes), dtype=torch.float)
+    adj[edge_index[0], edge_index[1]] = 1
+    return adj
+
+
+# Función auxiliar para eliminar filas/columnas de un tensor
+def th_delete(tensor, indices):
+    mask = torch.ones(tensor.size(), dtype=torch.bool)
+    mask[indices] = False
+    return tensor[mask]
 
 
 import networkx as nx
