@@ -12,7 +12,8 @@ from .preprocessing import *
 import random
 import scipy.io as sio
 from sklearn.preprocessing import StandardScaler
-
+import json
+from networkx.readwrite import json_graph
 
 from sklearn.decomposition import TruncatedSVD
 def reduce_dimensionality(features, n_components=100):
@@ -319,33 +320,35 @@ def load_data_nc_md(dataset, use_feats, data_path, split_seed):
     return sp.csr_matrix(adj), features, labels,G
 
 
+# Añadir la llamada a esta función en load_data_nc
 def load_data_nc(dataset, use_feats, data_path, split_seed):
-    if dataset in ['cora', 'pubmed','citeseer']:
+    if dataset in ['cora', 'pubmed', 'citeseer']:
         adj, features, labels, idx_train, idx_val, idx_test = load_citation_data(
             dataset, use_feats, data_path, split_seed
         )
     else:
-        if dataset in ['disease_nc','tree_cycle','tree_grid','ba_shape']:
+        if dataset in ['disease_nc', 'tree_cycle', 'tree_grid', 'ba_shape']:
             adj, features, labels = load_synthetic_data(dataset, use_feats, data_path)
             val_prop, test_prop = 0.10, 0.60
         elif dataset == 'airport':
             adj, features, labels = load_data_airport(dataset, data_path, return_label=True)
             val_prop, test_prop = 0.15, 0.15
         elif dataset == 'deezer':
-            dj, features, labels = load_json_data(dataset, use_feats, data_path)
+            adj, features, labels = load_json_data(dataset, use_feats, data_path)
             val_prop, test_prop = 0.10, 0.60
         elif dataset == 'power':
-            adj, features,labels,G = load_synthetic_md_data(dataset, False, data_path)[:4]
+            adj, features, labels, G = load_synthetic_md_data(dataset, False, data_path)[:4]
             val_prop, test_prop = 0.10, 0.60
-            #features = reduce_dimensionality(features, n_components=20)
-            #features = torch.FloatTensor(features)
         elif dataset == 'photo':
             adj, features, labels = load_data_amazon_photo(data_path, return_label=True)
             val_prop, test_prop = 0.15, 0.15
-
+        elif dataset == 'ppi':
+            adj, features, labels, idx_train, idx_val, idx_test = load_data_ppi(data_path, return_label=True)
         else:
             raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
-        idx_val, idx_test, idx_train = split_data(labels, val_prop, test_prop, seed=split_seed)
+        
+        if dataset != 'ppi':
+            idx_val, idx_test, idx_train = split_data(labels, val_prop, test_prop, seed=split_seed)
 
     # Asegurarse de que las etiquetas son un vector
     if labels.ndim > 1:
@@ -359,9 +362,6 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
 
     # Imprimir las dimensiones de los datos
     print(f'adj shape: {adj.shape}')
-    # Calcular el número de enlaces
-    num_edges = adj.nnz / 2  # Dividir por 2 porque cada enlace se cuenta dos veces
-    print(f'Number of edges: {num_edges}')
     print(f'features shape: {features.shape}')
     print(f'labels shape: {labels.shape}')
 
@@ -378,6 +378,13 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
     print(f'Unique labels: {unique_labels}')
     print(f'Counts of unique labels: {counts}')
 
+    # Calcular el número de enlaces
+    num_edges = adj.nnz // 2  # Dividir por 2 porque cada enlace se cuenta dos veces
+    print(f'Number of edges: {num_edges}')
+
+    print(f'Number of validation samples: {len(idx_val)}')
+    print(f'Number of test samples: {len(idx_test)}')
+
     labels = torch.LongTensor(labels)
 
     data = {'adj_train': adj, 'features': features, 'labels': labels, 'idx_train': idx_train, 'idx_val': idx_val, 'idx_test': idx_test}
@@ -386,7 +393,83 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
 
 # ############### DATASETS ####################################
 
+def load_data_ppi(data_path, return_label=True):
+    # Cargar los datos del grafo
+    with open(os.path.join(data_path, "ppi-G.json")) as f:
+        G_data = json.load(f)
+    G = json_graph.node_link_graph(G_data)
+    
+    # Conversión de nodos a enteros si es necesario
+    if isinstance(list(G.nodes())[0], int):
+        conversion = lambda n: int(n)
+    else:
+        conversion = lambda n: n
 
+    # Cargar características de los nodos si existen
+    feats_path = os.path.join(data_path, "ppi-feats.npy")
+    if os.path.exists(feats_path):
+        feats = np.load(feats_path)
+    else:
+        print("No features present.. Only identity features will be used.")
+        feats = None
+    
+    # Cargar mapa de IDs y etiquetas de clases
+    with open(os.path.join(data_path, "ppi-id_map.json")) as f:
+        id_map = json.load(f)
+    id_map = {conversion(k): int(v) for k, v in id_map.items()}
+    
+    with open(os.path.join(data_path, "ppi-class_map.json")) as f:
+        class_map = json.load(f)
+    if isinstance(list(class_map.values())[0], list):
+        lab_conversion = lambda n: n
+    else:
+        lab_conversion = lambda n: int(n)
+    class_map = {conversion(k): lab_conversion(v) for k, v in class_map.items()}
+    
+    # Remover nodos que no tienen anotaciones de validación/prueba
+    broken_count = 0
+    for node in list(G.nodes()):
+        if not 'val' in G.nodes[node] or not 'test' in G.nodes[node]:
+            G.remove_node(node)
+            broken_count += 1
+    print(f"Removed {broken_count} nodes that lacked proper annotations due to networkx versioning issues")
+
+    # Asegurarse de que el grafo tiene anotaciones de enlaces eliminados para entrenamiento
+    for edge in G.edges():
+        if (G.nodes[edge[0]]['val'] or G.nodes[edge[1]]['val'] or
+                G.nodes[edge[0]]['test'] or G.nodes[edge[1]]['test']):
+            G[edge[0]][edge[1]]['train_removed'] = True
+        else:
+            G[edge[0]][edge[1]]['train_removed'] = False
+    
+    # Normalizar características si existen
+    if feats is not None:
+        train_ids = np.array([id_map[n] for n in G.nodes() if not G.nodes[n]['val'] and not G.nodes[n]['test']])
+        train_feats = feats[train_ids]
+        scaler = StandardScaler()
+        scaler.fit(train_feats)
+        feats = scaler.transform(feats)
+
+    # Convertir la matriz de adyacencia
+    adj = nx.adjacency_matrix(G)
+
+    # Crear la matriz de etiquetas
+    labels = np.zeros((len(G.nodes()), len(class_map[list(class_map.keys())[0]])))
+    for node, label in class_map.items():
+        labels[id_map[node]] = label
+
+    if return_label:
+        idx_train = [id_map[node] for node in G.nodes() if not G.nodes[node]['val'] and not G.nodes[node]['test']]
+        idx_val = [id_map[node] for node in G.nodes() if G.nodes[node]['val']]
+        idx_test = [id_map[node] for node in G.nodes() if G.nodes[node]['test']]
+
+        print(f'Number of training samples: {len(idx_train)}')
+        print(f'Number of validation samples: {len(idx_val)}')
+        print(f'Number of test samples: {len(idx_test)}')
+
+        return sp.csr_matrix(adj), torch.Tensor(feats), torch.LongTensor(labels), idx_train, idx_val, idx_test
+    else:
+        return sp.csr_matrix(adj), torch.Tensor(feats)
 def load_citation_data(dataset_str, use_feats, data_path, split_seed=None):
     names = ['x', 'y', 'tx', 'ty', 'allx', 'ally', 'graph']
     objects = []
