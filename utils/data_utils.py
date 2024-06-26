@@ -276,6 +276,11 @@ def load_data_lp(dataset, use_feats, data_path):
         adj, features, labels, G = load_synthetic_md_data(dataset, False, data_path)[:4]
     else:
         raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
+
+    # Imprimir las dimensiones de los datos
+    print(f'adj shape: {adj.shape}')
+    print(f'features shape: {features.shape}')
+
     data = {'adj_train': adj, 'features': features}
     return data
 
