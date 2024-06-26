@@ -279,8 +279,11 @@ def load_data_lp(dataset, use_feats, data_path):
 
     # Imprimir las dimensiones de los datos
     print(f'adj shape: {adj.shape}')
+    # Calcular el número de enlaces
+    num_edges = adj.nnz // 2  # Dividir por 2 porque cada enlace se cuenta dos veces
+    print(f'Number of edges: {num_edges}')
     print(f'features shape: {features.shape}')
-
+    
     data = {'adj_train': adj, 'features': features}
     return data
 
@@ -356,6 +359,9 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
 
     # Imprimir las dimensiones de los datos
     print(f'adj shape: {adj.shape}')
+    # Calcular el número de enlaces
+    num_edges = adj.nnz // 2  # Dividir por 2 porque cada enlace se cuenta dos veces
+    print(f'Number of edges: {num_edges}')
     print(f'features shape: {features.shape}')
     print(f'labels shape: {labels.shape}')
 
