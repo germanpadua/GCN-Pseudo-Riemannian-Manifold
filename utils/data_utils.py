@@ -36,17 +36,23 @@ def load_data(args, datapath):
         data = load_data_lp(args.dataset, args.use_feats, datapath)
         adj = data['adj_train']
         if args.task == 'lp':
-            adj_train, train_edges, train_edges_false, val_edges, val_edges_false, test_edges, test_edges_false = mask_edges(
+            if args.dataset == 'ppi':
+                adj_train, train_edges, train_edges_false, val_edges, val_edges_false, test_edges, test_edges_false = mask_edges_ppi(
+                    adj, data['G'], args.split_seed
+                )
+            else:
+                adj_train, train_edges, train_edges_false, val_edges, val_edges_false, test_edges, test_edges_false = mask_edges(
                     adj, args.val_prop, args.test_prop, args.split_seed
-            )
+                )
             data['adj_train'] = adj_train
             data['train_edges'], data['train_edges_false'] = train_edges, train_edges_false
             data['val_edges'], data['val_edges_false'] = val_edges, val_edges_false
             data['test_edges'], data['test_edges_false'] = test_edges, test_edges_false
     
     data['adj_train_norm'], data['features'] = process(
-            data['adj_train'], data['features'], args.normalize_adj, args.normalize_feats
+        data['adj_train'], data['features'], args.normalize_adj, args.normalize_feats
     )
+
     # print(data['features'].max())
     # print(data['adj_train_norm'])
     if args.task == 'md':
@@ -138,6 +144,45 @@ def mask_edges(adj, val_prop, test_prop, seed):
     return adj_train, torch.LongTensor(train_edges), torch.LongTensor(train_edges_false), torch.LongTensor(val_edges), \
            torch.LongTensor(val_edges_false), torch.LongTensor(test_edges), torch.LongTensor(
             test_edges_false)  
+
+
+def mask_edges_ppi(adj, G, seed):
+    np.random.seed(seed)
+
+    # Obtener los enlaces positivos y negativos
+    x, y = sp.triu(adj).nonzero()
+    pos_edges = np.array(list(zip(x, y)))
+    np.random.shuffle(pos_edges)
+    
+    x, y = sp.triu(sp.csr_matrix(1. - adj.toarray())).nonzero()
+    neg_edges = np.array(list(zip(x, y)))
+    np.random.shuffle(neg_edges)
+
+    # Filtrar enlaces de validación y prueba
+    val_edges = []
+    test_edges = []
+    train_edges = []
+    for edge in pos_edges:
+        if G.nodes[edge[0]]['val'] or G.nodes[edge[1]]['val']:
+            val_edges.append(edge)
+        elif G.nodes[edge[0]]['test'] or G.nodes[edge[1]]['test']:
+            test_edges.append(edge)
+        else:
+            train_edges.append(edge)
+
+    val_edges = np.array(val_edges)
+    test_edges = np.array(test_edges)
+    train_edges = np.array(train_edges)
+
+    val_edges_false = neg_edges[:len(val_edges)]
+    test_edges_false = neg_edges[len(val_edges):len(val_edges) + len(test_edges)]
+    train_edges_false = np.concatenate([neg_edges[len(val_edges) + len(test_edges):], val_edges, test_edges], axis=0)
+
+    adj_train = sp.csr_matrix((np.ones(train_edges.shape[0]), (train_edges[:, 0], train_edges[:, 1])), shape=adj.shape)
+    adj_train = adj_train + adj_train.T
+    
+    return adj_train, torch.LongTensor(train_edges), torch.LongTensor(train_edges_false), torch.LongTensor(val_edges), \
+           torch.LongTensor(val_edges_false), torch.LongTensor(test_edges), torch.LongTensor(test_edges_false)
 
 
 def split_data(labels, val_prop, test_prop, seed):
@@ -275,6 +320,8 @@ def load_data_lp(dataset, use_feats, data_path):
         adj, features, labels = load_data_amazon_photo(data_path, return_label=False)
     elif dataset == 'power':
         adj, features, labels, G = load_synthetic_md_data(dataset, False, data_path)[:4]
+    elif dataset == 'ppi':
+            adj, features, G = load_data_ppi(data_path, return_label=False)
     else:
         raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
 
@@ -285,7 +332,10 @@ def load_data_lp(dataset, use_feats, data_path):
     print(f'Number of edges: {num_edges}')
     print(f'features shape: {features.shape}')
     
-    data = {'adj_train': adj, 'features': features}
+    if dataset == 'ppi':
+      data = {'adj_train': adj, 'features': features, 'G': G}
+    else:
+      data = {'adj_train': adj, 'features': features}
     return data
 
 
@@ -469,7 +519,9 @@ def load_data_ppi(data_path, return_label=True):
 
         return sp.csr_matrix(adj), torch.Tensor(feats), torch.LongTensor(labels), idx_train, idx_val, idx_test
     else:
-        return sp.csr_matrix(adj), torch.Tensor(feats)
+        return sp.csr_matrix(adj), torch.Tensor(feats), G
+
+
 def load_citation_data(dataset_str, use_feats, data_path, split_seed=None):
     names = ['x', 'y', 'tx', 'ty', 'allx', 'ally', 'graph']
     objects = []
