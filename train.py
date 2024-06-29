@@ -53,17 +53,28 @@ def train(args):
     # Load data
     data = load_data(args, os.path.join(os.environ['DATAPATH'], args.dataset))
     args.n_nodes, args.feat_dim = data['features'].shape
+    
+    # Log dataset information
+    logging.info(f'Number of nodes: {args.n_nodes}')
+    logging.info(f'Number of features: {args.feat_dim}')
+    
     if args.task == 'nc':
         Model = NCModel
         args.n_classes = int(data['labels'].max() + 1)
-        logging.info(f'Num classes: {args.n_classes}')
+        logging.info(f'Number of classes: {args.n_classes}')
     elif args.task == 'md':
         Model = MDModel
         args.eval_freq = args.epochs + 1
     else:
-        args.nb_false_edges = len(data['train_edges_false'])
-        args.nb_edges = len(data['train_edges'])
         if args.task == 'lp':
+            args.nb_false_edges = len(data['train_edges_false'])
+            args.nb_edges = len(data['train_edges'])
+            logging.info(f'Number of training edges: {args.nb_edges}')
+            logging.info(f'Number of false training edges: {args.nb_false_edges}')
+            logging.info(f'Number of validation edges: {len(data["val_edges"])}')
+            logging.info(f'Number of false validation edges: {len(data["val_edges_false"])}')
+            logging.info(f'Number of test edges: {len(data["test_edges"])}')
+            logging.info(f'Number of false test edges: {len(data["test_edges_false"])}')
             Model = LPModel
         else:
             Model = RECModel
