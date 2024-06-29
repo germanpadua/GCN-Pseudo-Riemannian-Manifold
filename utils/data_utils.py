@@ -326,11 +326,11 @@ def load_data_lp(dataset, use_feats, data_path):
         raise FileNotFoundError('Dataset {} is not supported.'.format(dataset))
 
     # Imprimir las dimensiones de los datos
-    print(f'adj shape: {adj.shape}')
+    # print(f'adj shape: {adj.shape}')
     # Calcular el número de enlaces
-    num_edges = adj.nnz / 2  # Dividir por 2 porque cada enlace se cuenta dos veces
-    print(f'Number of edges: {num_edges}')
-    print(f'features shape: {features.shape}')
+    # num_edges = adj.nnz / 2  # Dividir por 2 porque cada enlace se cuenta dos veces
+    # print(f'Number of edges: {num_edges}')
+    # print(f'features shape: {features.shape}')
     
     if dataset == 'ppi':
       data = {'adj_train': adj, 'features': features, 'G': G}
@@ -411,29 +411,29 @@ def load_data_nc(dataset, use_feats, data_path, split_seed):
     labels = map_labels_to_consecutive(labels)
 
     # Imprimir las dimensiones de los datos
-    print(f'adj shape: {adj.shape}')
-    print(f'features shape: {features.shape}')
-    print(f'labels shape: {labels.shape}')
+    # print(f'adj shape: {adj.shape}')
+    # print(f'features shape: {features.shape}')
+    # print(f'labels shape: {labels.shape}')
 
     # Calcular el número de clases usando etiquetas únicas
-    num_classes_unique = len(torch.unique(labels))
-    print(f'Number of unique classes: {num_classes_unique}')
+    # num_classes_unique = len(torch.unique(labels))
+    # print(f'Number of unique classes: {num_classes_unique}')
 
     # Calcular el número de clases usando el valor máximo de las etiquetas
-    num_classes_max = int(labels.max().item() + 1)
-    print(f'Number of classes based on max label value: {num_classes_max}')
+    # num_classes_max = int(labels.max().item() + 1)
+    # print(f'Number of classes based on max label value: {num_classes_max}')
 
     # Imprimir todas las etiquetas únicas y su conteo
-    unique_labels, counts = torch.unique(labels, return_counts=True)
-    print(f'Unique labels: {unique_labels}')
-    print(f'Counts of unique labels: {counts}')
+    # unique_labels, counts = torch.unique(labels, return_counts=True)
+    # print(f'Unique labels: {unique_labels}')
+    # print(f'Counts of unique labels: {counts}')
 
     # Calcular el número de enlaces
-    num_edges = adj.nnz // 2  # Dividir por 2 porque cada enlace se cuenta dos veces
-    print(f'Number of edges: {num_edges}')
+    # num_edges = adj.nnz // 2  # Dividir por 2 porque cada enlace se cuenta dos veces
+    # print(f'Number of edges: {num_edges}')
 
-    print(f'Number of validation samples: {len(idx_val)}')
-    print(f'Number of test samples: {len(idx_test)}')
+    # print(f'Number of validation samples: {len(idx_val)}')
+    # print(f'Number of test samples: {len(idx_test)}')
 
     labels = torch.LongTensor(labels)
 
@@ -482,7 +482,7 @@ def load_data_ppi(data_path, return_label=True):
         if not 'val' in G.nodes[node] or not 'test' in G.nodes[node]:
             G.remove_node(node)
             broken_count += 1
-    print(f"Removed {broken_count} nodes that lacked proper annotations due to networkx versioning issues")
+    # print(f"Removed {broken_count} nodes that lacked proper annotations due to networkx versioning issues")
 
     # Asegurarse de que el grafo tiene anotaciones de enlaces eliminados para entrenamiento
     for edge in G.edges():
@@ -513,9 +513,9 @@ def load_data_ppi(data_path, return_label=True):
         idx_val = [id_map[node] for node in G.nodes() if G.nodes[node]['val']]
         idx_test = [id_map[node] for node in G.nodes() if G.nodes[node]['test']]
 
-        print(f'Number of training samples: {len(idx_train)}')
-        print(f'Number of validation samples: {len(idx_val)}')
-        print(f'Number of test samples: {len(idx_test)}')
+        # print(f'Number of training samples: {len(idx_train)}')
+        # print(f'Number of validation samples: {len(idx_val)}')
+        # print(f'Number of test samples: {len(idx_test)}')
 
         return sp.csr_matrix(adj), torch.Tensor(feats), torch.LongTensor(labels), idx_train, idx_val, idx_test
     else:
