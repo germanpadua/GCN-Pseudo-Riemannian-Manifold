@@ -149,14 +149,22 @@ def mask_edges(adj, val_prop, test_prop, seed):
 def mask_edges_ppi(adj, G, seed):
     np.random.seed(seed)
 
-    # Obtener los enlaces positivos y negativos
-    x, y = sp.triu(adj).nonzero()
+    # Obtener los enlaces positivos (existentes)
+    upper_adj = sp.triu(adj, k=1)  # Considerar solo la parte superior para evitar duplicados
+    x, y = upper_adj.nonzero()
     pos_edges = np.array(list(zip(x, y)))
     np.random.shuffle(pos_edges)
     
-    x, y = sp.triu(sp.csr_matrix(1. - adj.toarray())).nonzero()
-    neg_edges = np.array(list(zip(x, y)))
-    np.random.shuffle(neg_edges)
+    # Obtener los enlaces negativos (no existentes)
+    neg_edges = []
+    num_pos_edges = len(pos_edges)
+    num_nodes = adj.shape[0]
+    while len(neg_edges) < num_pos_edges:
+        i = np.random.randint(0, num_nodes)
+        j = np.random.randint(0, num_nodes)
+        if i != j and adj[i, j] == 0 and adj[j, i] == 0:
+            neg_edges.append((i, j))
+    neg_edges = np.array(neg_edges)
 
     # Filtrar enlaces de validación y prueba
     val_edges = []
@@ -178,11 +186,41 @@ def mask_edges_ppi(adj, G, seed):
     test_edges_false = neg_edges[len(val_edges):len(val_edges) + len(test_edges)]
     train_edges_false = np.concatenate([neg_edges[len(val_edges) + len(test_edges):], val_edges, test_edges], axis=0)
 
-    adj_train = sp.csr_matrix((np.ones(train_edges.shape[0]), (train_edges[:, 0], train_edges[:, 1])), shape=adj.shape)
+    # Reducir el tamaño del conjunto de datos de entrenamiento y validación
+    reduced_train_size = len(train_edges) // 5
+    reduced_val_size = len(val_edges) // 2
+    reduced_test_size = len(test_edges) // 2
+
+    # Crear una lista de conjuntos de nodos conectados
+    subgraph = G.subgraph(np.unique(train_edges.flatten())).copy()
+    connected_components = list(nx.connected_components(subgraph))
+
+    # Seleccionar la mitad de los enlaces de entrenamiento sin romper la conectividad
+    selected_train_edges = []
+    current_size = 0
+
+    for component in connected_components:
+        component_edges = [edge for edge in train_edges if edge[0] in component and edge[1] in component]
+        if current_size + len(component_edges) > reduced_train_size:
+            remaining_size = reduced_train_size - current_size
+            selected_train_edges.extend(component_edges[:remaining_size])
+            break
+        selected_train_edges.extend(component_edges)
+        current_size += len(component_edges)
+
+    selected_train_edges = np.array(selected_train_edges)
+
+    # Reducir el conjunto de validación y prueba
+    selected_val_edges = val_edges[:reduced_val_size]
+    selected_test_edges = test_edges[:reduced_test_size]
+
+    adj_train = sp.csr_matrix((np.ones(selected_train_edges.shape[0]), (selected_train_edges[:, 0], selected_train_edges[:, 1])), shape=adj.shape)
     adj_train = adj_train + adj_train.T
-    
-    return adj_train, torch.LongTensor(train_edges), torch.LongTensor(train_edges_false), torch.LongTensor(val_edges), \
-           torch.LongTensor(val_edges_false), torch.LongTensor(test_edges), torch.LongTensor(test_edges_false)
+
+    #print("adj_train shape:", adj_train.shape)
+
+    return adj_train, torch.LongTensor(selected_train_edges), torch.LongTensor(train_edges_false), torch.LongTensor(selected_val_edges), \
+           torch.LongTensor(val_edges_false[:len(selected_val_edges)]), torch.LongTensor(selected_test_edges), torch.LongTensor(test_edges_false[:len(selected_test_edges)])
 
 
 def split_data(labels, val_prop, test_prop, seed):
