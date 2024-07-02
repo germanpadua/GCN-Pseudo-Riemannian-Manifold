@@ -62,6 +62,9 @@ def train(args):
         Model = NCModel
         args.n_classes = int(data['labels'].max() + 1)
         logging.info(f'Number of classes: {args.n_classes}')
+        logging.info(f'Number of training nodes: {len(data["idx_train"])}')
+        logging.info(f'Number of validation nodes: {len(data["idx_val"])}')
+        logging.info(f'Number of test nodes: {len(data["idx_test"])}')
     elif args.task == 'md':
         Model = MDModel
         args.eval_freq = args.epochs + 1
