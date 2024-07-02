@@ -130,7 +130,14 @@ class SpGraphAttentionLayer(nn.Module):
         h_prime = self.special_spmm(edge, edge_e, torch.Size([N, N]), h)
         assert not torch.isnan(h_prime).any()
         # h_prime: N x out
-        h_prime = h_prime.div(e_rowsum)
+
+        if torch.isnan(e_rowsum).any():
+            print("NaN detected in e_rowsum before division")
+            
+        h_prime = h_prime.div(e_rowsum + 1e-10) # Añadimos un valor pequeño para evitar división entre cero
+
+        if torch.isnan(h_prime).any():
+            print("NaN detected in h_prime after division")
         # h_prime: N x out
         assert not torch.isnan(h_prime).any()
         return self.act(h_prime)
