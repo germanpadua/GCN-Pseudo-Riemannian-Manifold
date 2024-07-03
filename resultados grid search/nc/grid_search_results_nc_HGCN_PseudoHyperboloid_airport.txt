@@ -1,0 +1,1422 @@
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9698 train_acc: 0.5816 train_f1: 0.5816 time: 0.3784s
+INFO:root:Epoch: 0050 val_loss: 0.9853 val_acc: 0.5820 val_f1: 0.5820
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 42.8358s
+INFO:root:Val set results: val_loss: 0.9853 val_acc: 0.5820 val_f1: 0.5820
+INFO:root:Test set results: test_loss: 1.0013 test_acc: 0.5565 test_f1: 0.5565
+INFO:root:Saved model in /content/logs/nc/2024_7_1/222
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9815 train_acc: 0.5628 train_f1: 0.5628 time: 0.3702s
+INFO:root:Epoch: 0050 val_loss: 0.9897 val_acc: 0.5914 val_f1: 0.5914
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 45.3262s
+INFO:root:Val set results: val_loss: 0.9897 val_acc: 0.5914 val_f1: 0.5914
+INFO:root:Test set results: test_loss: 1.0076 test_acc: 0.5628 test_f1: 0.5628
+INFO:root:Saved model in /content/logs/nc/2024_7_1/223
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9802 train_acc: 0.5649 train_f1: 0.5649 time: 0.4499s
+INFO:root:Epoch: 0050 val_loss: 0.9885 val_acc: 0.5941 val_f1: 0.5941
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.3617s
+INFO:root:Val set results: val_loss: 0.9885 val_acc: 0.5941 val_f1: 0.5941
+INFO:root:Test set results: test_loss: 1.0062 test_acc: 0.5649 test_f1: 0.5649
+INFO:root:Saved model in /content/logs/nc/2024_7_1/224
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1090 train_acc: 0.5167 train_f1: 0.5167 time: 0.3781s
+INFO:root:Epoch: 0050 val_loss: 1.0421 val_acc: 0.5565 val_f1: 0.5565
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.6938s
+INFO:root:Val set results: val_loss: 1.1612 val_acc: 0.5663 val_f1: 0.5663
+INFO:root:Test set results: test_loss: 1.1790 test_acc: 0.5377 test_f1: 0.5377
+INFO:root:Saved model in /content/logs/nc/2024_7_1/225
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1092 train_acc: 0.5105 train_f1: 0.5105 time: 0.3661s
+INFO:root:Epoch: 0050 val_loss: 1.0396 val_acc: 0.5506 val_f1: 0.5506
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 36.9886s
+INFO:root:Val set results: val_loss: 1.1647 val_acc: 0.5600 val_f1: 0.5600
+INFO:root:Test set results: test_loss: 1.1819 test_acc: 0.5356 test_f1: 0.5356
+INFO:root:Saved model in /content/logs/nc/2024_7_1/226
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1099 train_acc: 0.5084 train_f1: 0.5084 time: 0.3661s
+INFO:root:Epoch: 0050 val_loss: 1.0391 val_acc: 0.5511 val_f1: 0.5511
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.6805s
+INFO:root:Val set results: val_loss: 1.1653 val_acc: 0.5578 val_f1: 0.5578
+INFO:root:Test set results: test_loss: 1.1823 test_acc: 0.5314 test_f1: 0.5314
+INFO:root:Saved model in /content/logs/nc/2024_7_1/227
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2361 train_acc: 0.3975 train_f1: 0.3975 time: 0.3759s
+INFO:root:Epoch: 0050 val_loss: 1.1017 val_acc: 0.5363 val_f1: 0.5363
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.5579s
+INFO:root:Val set results: val_loss: 1.2061 val_acc: 0.5632 val_f1: 0.5632
+INFO:root:Test set results: test_loss: 1.2168 test_acc: 0.5209 test_f1: 0.5209
+INFO:root:Saved model in /content/logs/nc/2024_7_1/228
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2298 train_acc: 0.3912 train_f1: 0.3912 time: 0.3773s
+INFO:root:Epoch: 0050 val_loss: 1.1028 val_acc: 0.5417 val_f1: 0.5417
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.7560s
+INFO:root:Val set results: val_loss: 1.2047 val_acc: 0.5573 val_f1: 0.5573
+INFO:root:Test set results: test_loss: 1.2162 test_acc: 0.5293 test_f1: 0.5293
+INFO:root:Saved model in /content/logs/nc/2024_7_1/229
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2305 train_acc: 0.3975 train_f1: 0.3975 time: 0.3887s
+INFO:root:Epoch: 0050 val_loss: 1.1015 val_acc: 0.5457 val_f1: 0.5457
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 36.2209s
+INFO:root:Val set results: val_loss: 1.2049 val_acc: 0.5556 val_f1: 0.5556
+INFO:root:Test set results: test_loss: 1.2164 test_acc: 0.5272 test_f1: 0.5272
+INFO:root:Saved model in /content/logs/nc/2024_7_1/230
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9739 train_acc: 0.5669 train_f1: 0.5669 time: 0.3840s
+INFO:root:Epoch: 0050 val_loss: 0.9802 val_acc: 0.5730 val_f1: 0.5730
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 37.7072s
+INFO:root:Val set results: val_loss: 1.1401 val_acc: 0.5811 val_f1: 0.5811
+INFO:root:Test set results: test_loss: 1.1604 test_acc: 0.5439 test_f1: 0.5439
+INFO:root:Saved model in /content/logs/nc/2024_7_1/231
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9736 train_acc: 0.5962 train_f1: 0.5962 time: 0.3693s
+INFO:root:Epoch: 0050 val_loss: 0.9746 val_acc: 0.6044 val_f1: 0.6044
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 34.8580s
+INFO:root:Val set results: val_loss: 0.9746 val_acc: 0.6044 val_f1: 0.6044
+INFO:root:Test set results: test_loss: 0.9900 test_acc: 0.5795 test_f1: 0.5795
+INFO:root:Saved model in /content/logs/nc/2024_7_1/232
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9722 train_acc: 0.5962 train_f1: 0.5962 time: 0.3853s
+INFO:root:Epoch: 0050 val_loss: 0.9733 val_acc: 0.6057 val_f1: 0.6057
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 36.2309s
+INFO:root:Val set results: val_loss: 0.9733 val_acc: 0.6057 val_f1: 0.6057
+INFO:root:Test set results: test_loss: 0.9879 test_acc: 0.5816 test_f1: 0.5816
+INFO:root:Saved model in /content/logs/nc/2024_7_1/233
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1061 train_acc: 0.5084 train_f1: 0.5084 time: 0.3758s
+INFO:root:Epoch: 0050 val_loss: 1.0458 val_acc: 0.5641 val_f1: 0.5641
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.7852s
+INFO:root:Val set results: val_loss: 1.0458 val_acc: 0.5641 val_f1: 0.5641
+INFO:root:Test set results: test_loss: 1.0647 test_acc: 0.5460 test_f1: 0.5460
+INFO:root:Saved model in /content/logs/nc/2024_7_1/234
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1066 train_acc: 0.5105 train_f1: 0.5105 time: 0.3814s
+INFO:root:Epoch: 0050 val_loss: 1.0327 val_acc: 0.5466 val_f1: 0.5466
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.7141s
+INFO:root:Val set results: val_loss: 1.1633 val_acc: 0.5600 val_f1: 0.5600
+INFO:root:Test set results: test_loss: 1.1806 test_acc: 0.5356 test_f1: 0.5356
+INFO:root:Saved model in /content/logs/nc/2024_7_1/235
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1071 train_acc: 0.5084 train_f1: 0.5084 time: 0.3829s
+INFO:root:Epoch: 0050 val_loss: 1.0315 val_acc: 0.5461 val_f1: 0.5461
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 36.0545s
+INFO:root:Val set results: val_loss: 1.1638 val_acc: 0.5582 val_f1: 0.5582
+INFO:root:Test set results: test_loss: 1.1811 test_acc: 0.5356 test_f1: 0.5356
+INFO:root:Saved model in /content/logs/nc/2024_7_1/236
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2387 train_acc: 0.4038 train_f1: 0.4038 time: 0.5681s
+INFO:root:Epoch: 0050 val_loss: 1.1046 val_acc: 0.5426 val_f1: 0.5426
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 36.4524s
+INFO:root:Val set results: val_loss: 1.2096 val_acc: 0.5565 val_f1: 0.5565
+INFO:root:Test set results: test_loss: 1.2203 test_acc: 0.5335 test_f1: 0.5335
+INFO:root:Saved model in /content/logs/nc/2024_7_1/237
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2289 train_acc: 0.3975 train_f1: 0.3975 time: 0.3736s
+INFO:root:Epoch: 0050 val_loss: 1.0989 val_acc: 0.5475 val_f1: 0.5475
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.9610s
+INFO:root:Val set results: val_loss: 1.2076 val_acc: 0.5609 val_f1: 0.5609
+INFO:root:Test set results: test_loss: 1.2199 test_acc: 0.5335 test_f1: 0.5335
+INFO:root:Saved model in /content/logs/nc/2024_7_1/238
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 2180
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2295 train_acc: 0.3996 train_f1: 0.3996 time: 0.3737s
+INFO:root:Epoch: 0050 val_loss: 1.0986 val_acc: 0.5475 val_f1: 0.5475
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 35.7362s
+INFO:root:Val set results: val_loss: 1.2081 val_acc: 0.5591 val_f1: 0.5591
+INFO:root:Test set results: test_loss: 1.2202 test_acc: 0.5335 test_f1: 0.5335
+INFO:root:Saved model in /content/logs/nc/2024_7_1/239
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.8116 train_acc: 0.6778 train_f1: 0.6778 time: 0.6913s
+INFO:root:Epoch: 0050 val_loss: 0.8428 val_acc: 0.6537 val_f1: 0.6537
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 64.7415s
+INFO:root:Val set results: val_loss: 0.8428 val_acc: 0.6537 val_f1: 0.6537
+INFO:root:Test set results: test_loss: 0.8850 test_acc: 0.6213 test_f1: 0.6213
+INFO:root:Saved model in /content/logs/nc/2024_7_1/240
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9542 train_acc: 0.5941 train_f1: 0.5941 time: 0.6654s
+INFO:root:Epoch: 0050 val_loss: 0.9650 val_acc: 0.6026 val_f1: 0.6026
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 65.4769s
+INFO:root:Val set results: val_loss: 0.9870 val_acc: 0.6039 val_f1: 0.6039
+INFO:root:Test set results: test_loss: 1.0253 test_acc: 0.5816 test_f1: 0.5816
+INFO:root:Saved model in /content/logs/nc/2024_7_1/241
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9540 train_acc: 0.5941 train_f1: 0.5941 time: 0.7276s
+INFO:root:Epoch: 0050 val_loss: 0.9582 val_acc: 0.6026 val_f1: 0.6026
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 64.9594s
+INFO:root:Val set results: val_loss: 0.9835 val_acc: 0.6026 val_f1: 0.6026
+INFO:root:Test set results: test_loss: 1.0227 test_acc: 0.5816 test_f1: 0.5816
+INFO:root:Saved model in /content/logs/nc/2024_7_1/242
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0730 train_acc: 0.5314 train_f1: 0.5314 time: 0.6796s
+INFO:root:Epoch: 0050 val_loss: 1.0214 val_acc: 0.5762 val_f1: 0.5762
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 64.5142s
+INFO:root:Val set results: val_loss: 1.0458 val_acc: 0.5851 val_f1: 0.5851
+INFO:root:Test set results: test_loss: 1.0747 test_acc: 0.5607 test_f1: 0.5607
+INFO:root:Saved model in /content/logs/nc/2024_7_1/243
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0747 train_acc: 0.5251 train_f1: 0.5251 time: 1.1039s
+INFO:root:Epoch: 0050 val_loss: 1.0210 val_acc: 0.5739 val_f1: 0.5739
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 66.5449s
+INFO:root:Val set results: val_loss: 1.0387 val_acc: 0.5851 val_f1: 0.5851
+INFO:root:Test set results: test_loss: 1.0679 test_acc: 0.5649 test_f1: 0.5649
+INFO:root:Saved model in /content/logs/nc/2024_7_1/244
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0735 train_acc: 0.5230 train_f1: 0.5230 time: 0.6876s
+INFO:root:Epoch: 0050 val_loss: 1.0209 val_acc: 0.5753 val_f1: 0.5753
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 65.3613s
+INFO:root:Val set results: val_loss: 1.0392 val_acc: 0.5842 val_f1: 0.5842
+INFO:root:Test set results: test_loss: 1.0681 test_acc: 0.5649 test_f1: 0.5649
+INFO:root:Saved model in /content/logs/nc/2024_7_1/245
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2164 train_acc: 0.4289 train_f1: 0.4289 time: 0.7305s
+INFO:root:Epoch: 0050 val_loss: 1.1045 val_acc: 0.5614 val_f1: 0.5614
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 67.1091s
+INFO:root:Val set results: val_loss: 1.3082 val_acc: 0.5659 val_f1: 0.5659
+INFO:root:Test set results: test_loss: 1.3111 test_acc: 0.5397 test_f1: 0.5397
+INFO:root:Saved model in /content/logs/nc/2024_7_1/246
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1953 train_acc: 0.4289 train_f1: 0.4289 time: 0.7501s
+INFO:root:Epoch: 0050 val_loss: 1.0878 val_acc: 0.5596 val_f1: 0.5596
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 71.3654s
+INFO:root:Val set results: val_loss: 1.2021 val_acc: 0.5909 val_f1: 0.5909
+INFO:root:Test set results: test_loss: 1.2166 test_acc: 0.5502 test_f1: 0.5502
+INFO:root:Saved model in /content/logs/nc/2024_7_1/247
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1970 train_acc: 0.4289 train_f1: 0.4289 time: 0.7167s
+INFO:root:Epoch: 0050 val_loss: 1.0867 val_acc: 0.5596 val_f1: 0.5596
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 68.3235s
+INFO:root:Val set results: val_loss: 1.2895 val_acc: 0.5847 val_f1: 0.5847
+INFO:root:Test set results: test_loss: 1.2943 test_acc: 0.5544 test_f1: 0.5544
+INFO:root:Saved model in /content/logs/nc/2024_7_1/248
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.8893 train_acc: 0.5962 train_f1: 0.5962 time: 0.7331s
+INFO:root:Epoch: 0050 val_loss: 0.8901 val_acc: 0.6116 val_f1: 0.6116
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 68.9262s
+INFO:root:Val set results: val_loss: 0.8901 val_acc: 0.6116 val_f1: 0.6116
+INFO:root:Test set results: test_loss: 0.9218 test_acc: 0.5879 test_f1: 0.5879
+INFO:root:Saved model in /content/logs/nc/2024_7_1/249
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9297 train_acc: 0.5732 train_f1: 0.5732 time: 0.7518s
+INFO:root:Epoch: 0050 val_loss: 0.9212 val_acc: 0.5874 val_f1: 0.5874
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 69.1381s
+INFO:root:Val set results: val_loss: 0.9475 val_acc: 0.6066 val_f1: 0.6066
+INFO:root:Test set results: test_loss: 0.9983 test_acc: 0.5628 test_f1: 0.5628
+INFO:root:Saved model in /content/logs/nc/2024_7_1/250
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9096 train_acc: 0.5816 train_f1: 0.5816 time: 0.7458s
+INFO:root:Epoch: 0050 val_loss: 0.9291 val_acc: 0.5784 val_f1: 0.5784
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 68.7993s
+INFO:root:Val set results: val_loss: 0.9007 val_acc: 0.6013 val_f1: 0.6013
+INFO:root:Test set results: test_loss: 0.9604 test_acc: 0.5586 test_f1: 0.5586
+INFO:root:Saved model in /content/logs/nc/2024_7_1/251
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0951 train_acc: 0.5251 train_f1: 0.5251 time: 0.9123s
+INFO:root:Epoch: 0050 val_loss: 1.0213 val_acc: 0.5806 val_f1: 0.5806
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 71.0421s
+INFO:root:Val set results: val_loss: 1.0339 val_acc: 0.5923 val_f1: 0.5923
+INFO:root:Test set results: test_loss: 1.0658 test_acc: 0.5607 test_f1: 0.5607
+INFO:root:Saved model in /content/logs/nc/2024_7_1/252
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1262 train_acc: 0.4728 train_f1: 0.4728 time: 0.7157s
+INFO:root:Epoch: 0050 val_loss: 1.0171 val_acc: 0.5865 val_f1: 0.5865
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 68.5290s
+INFO:root:Val set results: val_loss: 1.0309 val_acc: 0.5918 val_f1: 0.5918
+INFO:root:Test set results: test_loss: 1.0632 test_acc: 0.5628 test_f1: 0.5628
+INFO:root:Saved model in /content/logs/nc/2024_7_1/253
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1236 train_acc: 0.4812 train_f1: 0.4812 time: 0.7517s
+INFO:root:Epoch: 0050 val_loss: 1.0180 val_acc: 0.5842 val_f1: 0.5842
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 68.4359s
+INFO:root:Val set results: val_loss: 1.0671 val_acc: 0.5909 val_f1: 0.5909
+INFO:root:Test set results: test_loss: 1.0933 test_acc: 0.5732 test_f1: 0.5732
+INFO:root:Saved model in /content/logs/nc/2024_7_1/254
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2155 train_acc: 0.4414 train_f1: 0.4414 time: 0.7114s
+INFO:root:Epoch: 0050 val_loss: 1.1031 val_acc: 0.5793 val_f1: 0.5793
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 69.0347s
+INFO:root:Val set results: val_loss: 1.1031 val_acc: 0.5793 val_f1: 0.5793
+INFO:root:Test set results: test_loss: 1.1251 test_acc: 0.5628 test_f1: 0.5628
+INFO:root:Saved model in /content/logs/nc/2024_7_1/255
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1908 train_acc: 0.4310 train_f1: 0.4310 time: 0.7377s
+INFO:root:Epoch: 0050 val_loss: 1.0788 val_acc: 0.5793 val_f1: 0.5793
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 68.7520s
+INFO:root:Val set results: val_loss: 1.2874 val_acc: 0.5860 val_f1: 0.5860
+INFO:root:Test set results: test_loss: 1.2922 test_acc: 0.5502 test_f1: 0.5502
+INFO:root:Saved model in /content/logs/nc/2024_7_1/256
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 3188
+INFO:root:Number of features: 11
+INFO:root:Number of classes: 4
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=12, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (agg): HypAgg(c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+        (hyp_act): HypAct(c_in=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>), c_out=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=4, bias=1, c=tensor([-1.], device='cuda:0', grad_fn=<ToCopyBackward0>)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=4, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 18692
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1859 train_acc: 0.4351 train_f1: 0.4351 time: 0.8935s
+INFO:root:Epoch: 0050 val_loss: 1.0794 val_acc: 0.5780 val_f1: 0.5780
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 68.7635s
+INFO:root:Val set results: val_loss: 1.2044 val_acc: 0.5793 val_f1: 0.5793
+INFO:root:Test set results: test_loss: 1.2191 test_acc: 0.5586 test_f1: 0.5586
+INFO:root:Saved model in /content/logs/nc/2024_7_1/257
+
+================================================================================

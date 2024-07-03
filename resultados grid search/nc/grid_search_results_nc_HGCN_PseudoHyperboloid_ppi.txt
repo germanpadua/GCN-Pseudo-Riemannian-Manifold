@@ -1,0 +1,1494 @@
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4668 train_acc: 0.6919 train_f1: 0.6919 time: 2.8620s
+INFO:root:Epoch: 0010 val_loss: 2.4005 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 40.2101s
+INFO:root:Val set results: val_loss: 3.1213 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.1217 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/0
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3861 train_acc: 0.6919 train_f1: 0.6919 time: 2.9389s
+INFO:root:Epoch: 0010 val_loss: 2.3135 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 41.1751s
+INFO:root:Val set results: val_loss: 2.8030 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.8041 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/1
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3893 train_acc: 0.6919 train_f1: 0.6919 time: 2.7724s
+INFO:root:Epoch: 0010 val_loss: 2.3166 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 38.6403s
+INFO:root:Val set results: val_loss: 2.8055 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.8066 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/2
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5086 train_acc: 0.5700 train_f1: 0.5700 time: 2.7446s
+INFO:root:Epoch: 0010 val_loss: 2.4009 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 39.0581s
+INFO:root:Val set results: val_loss: 3.1265 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.1268 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/3
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4482 train_acc: 0.5700 train_f1: 0.5700 time: 2.8136s
+INFO:root:Epoch: 0010 val_loss: 2.3330 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 39.1575s
+INFO:root:Val set results: val_loss: 2.7174 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7182 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/4
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4513 train_acc: 0.5700 train_f1: 0.5700 time: 2.7566s
+INFO:root:Epoch: 0010 val_loss: 2.3363 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 38.9604s
+INFO:root:Val set results: val_loss: 2.7205 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7213 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/5
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.6091 train_acc: 0.4579 train_f1: 0.4579 time: 2.7494s
+INFO:root:Epoch: 0010 val_loss: 2.4199 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 38.2449s
+INFO:root:Val set results: val_loss: 3.1352 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.1354 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/6
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5750 train_acc: 0.4579 train_f1: 0.4579 time: 2.7998s
+INFO:root:Epoch: 0010 val_loss: 2.3780 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 38.6827s
+INFO:root:Val set results: val_loss: 2.8417 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.8428 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/7
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5775 train_acc: 0.4579 train_f1: 0.4579 time: 2.8256s
+INFO:root:Epoch: 0010 val_loss: 2.3813 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 39.3402s
+INFO:root:Val set results: val_loss: 2.8444 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.8454 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/8
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4687 train_acc: 0.6919 train_f1: 0.6919 time: 2.8415s
+INFO:root:Epoch: 0010 val_loss: 2.4029 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 38.9268s
+INFO:root:Val set results: val_loss: 3.1182 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.1187 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/9
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3843 train_acc: 0.6919 train_f1: 0.6919 time: 2.8591s
+INFO:root:Epoch: 0010 val_loss: 2.3115 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 39.1104s
+INFO:root:Val set results: val_loss: 2.8023 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.8035 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/10
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3877 train_acc: 0.6919 train_f1: 0.6919 time: 3.0390s
+INFO:root:Epoch: 0010 val_loss: 2.3149 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 39.1864s
+INFO:root:Val set results: val_loss: 2.8049 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.8061 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/11
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5114 train_acc: 0.5700 train_f1: 0.5700 time: 2.7665s
+INFO:root:Epoch: 0010 val_loss: 2.4063 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 37.9482s
+INFO:root:Val set results: val_loss: 3.1261 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.1265 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/12
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4483 train_acc: 0.5700 train_f1: 0.5700 time: 2.9858s
+INFO:root:Epoch: 0010 val_loss: 2.3336 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 39.1636s
+INFO:root:Val set results: val_loss: 2.7178 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7186 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/13
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4512 train_acc: 0.5700 train_f1: 0.5700 time: 2.7710s
+INFO:root:Epoch: 0010 val_loss: 2.3367 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 38.5844s
+INFO:root:Val set results: val_loss: 2.7207 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7216 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/14
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.6061 train_acc: 0.4579 train_f1: 0.4579 time: 3.0115s
+INFO:root:Epoch: 0010 val_loss: 2.4218 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 39.2515s
+INFO:root:Val set results: val_loss: 3.1343 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.1346 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/15
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5721 train_acc: 0.4579 train_f1: 0.4579 time: 2.9594s
+INFO:root:Epoch: 0010 val_loss: 2.3780 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 38.6971s
+INFO:root:Val set results: val_loss: 2.7462 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7470 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/16
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10010
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5748 train_acc: 0.4579 train_f1: 0.4579 time: 3.3754s
+INFO:root:Epoch: 0010 val_loss: 2.3815 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 39.4225s
+INFO:root:Val set results: val_loss: 2.7493 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7501 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/17
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3403 train_acc: 0.6919 train_f1: 0.6919 time: 5.2744s
+INFO:root:Epoch: 0010 val_loss: 2.2920 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 73.0593s
+INFO:root:Val set results: val_loss: 3.0445 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.0435 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/18
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.2254 train_acc: 0.6919 train_f1: 0.6919 time: 5.9545s
+INFO:root:Epoch: 0010 val_loss: 2.1743 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.9565s
+INFO:root:Val set results: val_loss: 2.7982 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7969 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/19
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.2280 train_acc: 0.6919 train_f1: 0.6919 time: 5.2632s
+INFO:root:Epoch: 0010 val_loss: 2.1769 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.9566s
+INFO:root:Val set results: val_loss: 2.8938 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.8929 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/20
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3892 train_acc: 0.5755 train_f1: 0.5755 time: 5.3690s
+INFO:root:Epoch: 0010 val_loss: 2.2903 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 73.9627s
+INFO:root:Val set results: val_loss: 3.0599 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.0590 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/21
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3095 train_acc: 0.5755 train_f1: 0.5755 time: 5.7832s
+INFO:root:Epoch: 0010 val_loss: 2.2063 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.3829s
+INFO:root:Val set results: val_loss: 2.9126 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.9118 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/22
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3109 train_acc: 0.5755 train_f1: 0.5755 time: 5.3795s
+INFO:root:Epoch: 0010 val_loss: 2.2079 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 73.6040s
+INFO:root:Val set results: val_loss: 2.9139 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.9131 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/23
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5308 train_acc: 0.4598 train_f1: 0.4598 time: 5.4784s
+INFO:root:Epoch: 0010 val_loss: 2.3338 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 72.8186s
+INFO:root:Val set results: val_loss: 3.0802 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.0797 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/24
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5009 train_acc: 0.4598 train_f1: 0.4598 time: 5.5237s
+INFO:root:Epoch: 0010 val_loss: 2.2910 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 73.9474s
+INFO:root:Val set results: val_loss: 2.9500 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.9494 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/25
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5023 train_acc: 0.4598 train_f1: 0.4598 time: 5.5618s
+INFO:root:Epoch: 0010 val_loss: 2.2923 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.4751s
+INFO:root:Val set results: val_loss: 2.9533 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.9526 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/26
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3962 train_acc: 0.6919 train_f1: 0.6919 time: 5.9640s
+INFO:root:Epoch: 0010 val_loss: 2.3492 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.9990s
+INFO:root:Val set results: val_loss: 3.0536 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.0527 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/27
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.2260 train_acc: 0.6919 train_f1: 0.6919 time: 5.8360s
+INFO:root:Epoch: 0010 val_loss: 2.1751 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.9694s
+INFO:root:Val set results: val_loss: 2.7982 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7968 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/28
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.2279 train_acc: 0.6919 train_f1: 0.6919 time: 5.3199s
+INFO:root:Epoch: 0010 val_loss: 2.1768 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 73.7846s
+INFO:root:Val set results: val_loss: 2.7997 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.7983 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/29
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4491 train_acc: 0.5755 train_f1: 0.5755 time: 5.6013s
+INFO:root:Epoch: 0010 val_loss: 2.3608 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.1777s
+INFO:root:Val set results: val_loss: 3.0695 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.0687 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/30
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3059 train_acc: 0.5755 train_f1: 0.5755 time: 5.9335s
+INFO:root:Epoch: 0010 val_loss: 2.2036 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 75.6552s
+INFO:root:Val set results: val_loss: 2.9070 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.9062 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/31
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.3077 train_acc: 0.5755 train_f1: 0.5755 time: 5.3001s
+INFO:root:Epoch: 0010 val_loss: 2.2054 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.2954s
+INFO:root:Val set results: val_loss: 2.9084 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.9076 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/32
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.5603 train_acc: 0.4598 train_f1: 0.4598 time: 5.4023s
+INFO:root:Epoch: 0010 val_loss: 2.3777 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 73.8933s
+INFO:root:Val set results: val_loss: 3.0886 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 3.0881 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/33
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4953 train_acc: 0.4598 train_f1: 0.4598 time: 5.7831s
+INFO:root:Epoch: 0010 val_loss: 2.2888 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 74.5113s
+INFO:root:Val set results: val_loss: 2.9443 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.9436 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/34
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): HGCN(
+    (layers): Sequential(
+      (0): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=51, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+      (1): HyperbolicGraphConvolution(
+        (linear): HypLinear(in_features=128, out_features=128, c=tensor([-1.], requires_grad=True))
+        (agg): HypAgg(c=tensor([-1.], requires_grad=True))
+        (hyp_act): HypAct(c_in=tensor([-1.], requires_grad=True), c_out=tensor([-1.], requires_grad=True))
+      )
+    )
+  )
+  (decoder): LinearDecoder(
+    in_features=128, out_features=26, bias=1, c=tensor([-1.], requires_grad=True)
+    (cls): Linear(
+      (linear): Linear(in_features=128, out_features=26, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26522
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.4968 train_acc: 0.4598 train_f1: 0.4598 time: 5.1545s
+INFO:root:Epoch: 0010 val_loss: 2.2896 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 70.9882s
+INFO:root:Val set results: val_loss: 2.9468 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 2.9461 test_acc: 0.6734 test_f1: 0.6734
+INFO:root:Saved model in /content/logs/nc/2024_7_2/35
+
+================================================================================

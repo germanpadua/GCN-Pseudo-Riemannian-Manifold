@@ -1,0 +1,1440 @@
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2123 train_acc: 0.9277 train_f1: 0.9277 time: 0.0105s
+INFO:root:Epoch: 0050 val_loss: 0.4701 val_acc: 0.8864 val_f1: 0.8864
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1684s
+INFO:root:Val set results: val_loss: 0.4701 val_acc: 0.8864 val_f1: 0.8864
+INFO:root:Test set results: test_loss: 0.4242 test_acc: 0.8990 test_f1: 0.8990
+INFO:root:Saved model in /content/logs/nc/2024_7_1/183
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2330 train_acc: 0.9268 train_f1: 0.9268 time: 0.0103s
+INFO:root:Epoch: 0050 val_loss: 0.3553 val_acc: 0.8889 val_f1: 0.8889
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.2512s
+INFO:root:Val set results: val_loss: 0.3553 val_acc: 0.8889 val_f1: 0.8889
+INFO:root:Test set results: test_loss: 0.3047 test_acc: 0.9016 test_f1: 0.9016
+INFO:root:Saved model in /content/logs/nc/2024_7_1/184
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2547 train_acc: 0.9164 train_f1: 0.9164 time: 0.0107s
+INFO:root:Epoch: 0050 val_loss: 0.4164 val_acc: 0.8823 val_f1: 0.8823
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.0892s
+INFO:root:Val set results: val_loss: 0.4210 val_acc: 0.8823 val_f1: 0.8823
+INFO:root:Test set results: test_loss: 0.3664 test_acc: 0.8937 test_f1: 0.8937
+INFO:root:Saved model in /content/logs/nc/2024_7_1/185
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2553 train_acc: 0.9059 train_f1: 0.9059 time: 0.0109s
+INFO:root:Epoch: 0050 val_loss: 0.4533 val_acc: 0.8849 val_f1: 0.8849
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1486s
+INFO:root:Val set results: val_loss: 0.4533 val_acc: 0.8849 val_f1: 0.8849
+INFO:root:Test set results: test_loss: 0.4162 test_acc: 0.8990 test_f1: 0.8990
+INFO:root:Saved model in /content/logs/nc/2024_7_1/186
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2950 train_acc: 0.8998 train_f1: 0.8998 time: 0.0104s
+INFO:root:Epoch: 0050 val_loss: 0.3591 val_acc: 0.8863 val_f1: 0.8863
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1892s
+INFO:root:Val set results: val_loss: 0.3673 val_acc: 0.8866 val_f1: 0.8866
+INFO:root:Test set results: test_loss: 0.3162 test_acc: 0.9016 test_f1: 0.9016
+INFO:root:Saved model in /content/logs/nc/2024_7_1/187
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3166 train_acc: 0.8894 train_f1: 0.8894 time: 0.0104s
+INFO:root:Epoch: 0050 val_loss: 0.4369 val_acc: 0.8799 val_f1: 0.8799
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.0161s
+INFO:root:Val set results: val_loss: 0.4369 val_acc: 0.8799 val_f1: 0.8799
+INFO:root:Test set results: test_loss: 0.3950 test_acc: 0.8981 test_f1: 0.8981
+INFO:root:Saved model in /content/logs/nc/2024_7_1/188
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3820 train_acc: 0.8598 train_f1: 0.8598 time: 0.0104s
+INFO:root:Epoch: 0050 val_loss: 0.4122 val_acc: 0.8777 val_f1: 0.8777
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.0765s
+INFO:root:Val set results: val_loss: 0.4078 val_acc: 0.8840 val_f1: 0.8840
+INFO:root:Test set results: test_loss: 0.3632 test_acc: 0.8981 test_f1: 0.8981
+INFO:root:Saved model in /content/logs/nc/2024_7_1/189
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4175 train_acc: 0.8598 train_f1: 0.8598 time: 0.0108s
+INFO:root:Epoch: 0050 val_loss: 0.3760 val_acc: 0.8793 val_f1: 0.8793
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.2499s
+INFO:root:Val set results: val_loss: 0.3721 val_acc: 0.8885 val_f1: 0.8885
+INFO:root:Test set results: test_loss: 0.3207 test_acc: 0.9059 test_f1: 0.9059
+INFO:root:Saved model in /content/logs/nc/2024_7_1/190
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4070 train_acc: 0.8615 train_f1: 0.8615 time: 0.0106s
+INFO:root:Epoch: 0050 val_loss: 0.4077 val_acc: 0.8736 val_f1: 0.8736
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1486s
+INFO:root:Val set results: val_loss: 0.4169 val_acc: 0.8821 val_f1: 0.8821
+INFO:root:Test set results: test_loss: 0.3698 test_acc: 0.8963 test_f1: 0.8963
+INFO:root:Saved model in /content/logs/nc/2024_7_1/191
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2242 train_acc: 0.9216 train_f1: 0.9216 time: 0.0104s
+INFO:root:Epoch: 0050 val_loss: 0.4973 val_acc: 0.8564 val_f1: 0.8564
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.0904s
+INFO:root:Val set results: val_loss: 0.4552 val_acc: 0.8835 val_f1: 0.8835
+INFO:root:Test set results: test_loss: 0.4101 test_acc: 0.9024 test_f1: 0.9024
+INFO:root:Saved model in /content/logs/nc/2024_7_1/192
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2391 train_acc: 0.9207 train_f1: 0.9207 time: 0.0111s
+INFO:root:Epoch: 0050 val_loss: 0.3540 val_acc: 0.8853 val_f1: 0.8853
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.2929s
+INFO:root:Val set results: val_loss: 0.3705 val_acc: 0.8857 val_f1: 0.8857
+INFO:root:Test set results: test_loss: 0.3162 test_acc: 0.9033 test_f1: 0.9033
+INFO:root:Saved model in /content/logs/nc/2024_7_1/193
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2560 train_acc: 0.9190 train_f1: 0.9190 time: 0.0102s
+INFO:root:Epoch: 0050 val_loss: 0.3978 val_acc: 0.8808 val_f1: 0.8808
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.0847s
+INFO:root:Val set results: val_loss: 0.4035 val_acc: 0.8831 val_f1: 0.8831
+INFO:root:Test set results: test_loss: 0.3510 test_acc: 0.8981 test_f1: 0.8981
+INFO:root:Saved model in /content/logs/nc/2024_7_1/194
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2683 train_acc: 0.9085 train_f1: 0.9085 time: 0.0102s
+INFO:root:Epoch: 0050 val_loss: 0.4122 val_acc: 0.8808 val_f1: 0.8808
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1580s
+INFO:root:Val set results: val_loss: 0.4159 val_acc: 0.8831 val_f1: 0.8831
+INFO:root:Test set results: test_loss: 0.3661 test_acc: 0.8998 test_f1: 0.8998
+INFO:root:Saved model in /content/logs/nc/2024_7_1/195
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.2863 train_acc: 0.9042 train_f1: 0.9042 time: 0.0110s
+INFO:root:Epoch: 0050 val_loss: 0.3834 val_acc: 0.8683 val_f1: 0.8683
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1761s
+INFO:root:Val set results: val_loss: 0.3624 val_acc: 0.8872 val_f1: 0.8872
+INFO:root:Test set results: test_loss: 0.3179 test_acc: 0.9033 test_f1: 0.9033
+INFO:root:Saved model in /content/logs/nc/2024_7_1/196
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3166 train_acc: 0.8955 train_f1: 0.8955 time: 0.0105s
+INFO:root:Epoch: 0050 val_loss: 0.4169 val_acc: 0.8805 val_f1: 0.8805
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1062s
+INFO:root:Val set results: val_loss: 0.4189 val_acc: 0.8806 val_f1: 0.8806
+INFO:root:Test set results: test_loss: 0.3823 test_acc: 0.8929 test_f1: 0.8929
+INFO:root:Saved model in /content/logs/nc/2024_7_1/197
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3656 train_acc: 0.8772 train_f1: 0.8772 time: 0.0107s
+INFO:root:Epoch: 0050 val_loss: 0.3914 val_acc: 0.8797 val_f1: 0.8797
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.0734s
+INFO:root:Val set results: val_loss: 0.4026 val_acc: 0.8842 val_f1: 0.8842
+INFO:root:Test set results: test_loss: 0.3576 test_acc: 0.9024 test_f1: 0.9024
+INFO:root:Saved model in /content/logs/nc/2024_7_1/198
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4065 train_acc: 0.8632 train_f1: 0.8632 time: 0.0109s
+INFO:root:Epoch: 0050 val_loss: 0.3589 val_acc: 0.8870 val_f1: 0.8870
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1881s
+INFO:root:Val set results: val_loss: 0.3666 val_acc: 0.8889 val_f1: 0.8889
+INFO:root:Test set results: test_loss: 0.3183 test_acc: 0.9085 test_f1: 0.9085
+INFO:root:Saved model in /content/logs/nc/2024_7_1/199
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 96520
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4001 train_acc: 0.8615 train_f1: 0.8615 time: 0.0110s
+INFO:root:Epoch: 0050 val_loss: 0.3910 val_acc: 0.8715 val_f1: 0.8715
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.0976s
+INFO:root:Val set results: val_loss: 0.3947 val_acc: 0.8808 val_f1: 0.8808
+INFO:root:Test set results: test_loss: 0.3406 test_acc: 0.8990 test_f1: 0.8990
+INFO:root:Saved model in /content/logs/nc/2024_7_1/200
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3125 train_acc: 0.8990 train_f1: 0.8990 time: 0.0137s
+INFO:root:Epoch: 0050 val_loss: 0.5946 val_acc: 0.8560 val_f1: 0.8560
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3814s
+INFO:root:Val set results: val_loss: 0.5696 val_acc: 0.8638 val_f1: 0.8638
+INFO:root:Test set results: test_loss: 0.4763 test_acc: 0.8780 test_f1: 0.8780
+INFO:root:Saved model in /content/logs/nc/2024_7_1/201
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3057 train_acc: 0.9094 train_f1: 0.9094 time: 0.0152s
+INFO:root:Epoch: 0050 val_loss: 0.4275 val_acc: 0.8728 val_f1: 0.8728
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3817s
+INFO:root:Val set results: val_loss: 0.4299 val_acc: 0.8743 val_f1: 0.8743
+INFO:root:Test set results: test_loss: 0.3538 test_acc: 0.8990 test_f1: 0.8990
+INFO:root:Saved model in /content/logs/nc/2024_7_1/202
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3308 train_acc: 0.8859 train_f1: 0.8859 time: 0.0137s
+INFO:root:Epoch: 0050 val_loss: 0.5139 val_acc: 0.8397 val_f1: 0.8397
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3607s
+INFO:root:Val set results: val_loss: 0.4920 val_acc: 0.8609 val_f1: 0.8609
+INFO:root:Test set results: test_loss: 0.4093 test_acc: 0.8841 test_f1: 0.8841
+INFO:root:Saved model in /content/logs/nc/2024_7_1/203
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3622 train_acc: 0.8859 train_f1: 0.8859 time: 0.0139s
+INFO:root:Epoch: 0050 val_loss: 0.5121 val_acc: 0.8612 val_f1: 0.8612
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.4219s
+INFO:root:Val set results: val_loss: 0.5262 val_acc: 0.8646 val_f1: 0.8646
+INFO:root:Test set results: test_loss: 0.4586 test_acc: 0.8807 test_f1: 0.8807
+INFO:root:Saved model in /content/logs/nc/2024_7_1/204
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3723 train_acc: 0.8754 train_f1: 0.8754 time: 0.0139s
+INFO:root:Epoch: 0050 val_loss: 0.4239 val_acc: 0.8655 val_f1: 0.8655
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3640s
+INFO:root:Val set results: val_loss: 0.4375 val_acc: 0.8691 val_f1: 0.8691
+INFO:root:Test set results: test_loss: 0.3733 test_acc: 0.8902 test_f1: 0.8902
+INFO:root:Saved model in /content/logs/nc/2024_7_1/205
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4277 train_acc: 0.8571 train_f1: 0.8571 time: 0.0141s
+INFO:root:Epoch: 0050 val_loss: 0.4586 val_acc: 0.8549 val_f1: 0.8549
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.4443s
+INFO:root:Val set results: val_loss: 0.4641 val_acc: 0.8610 val_f1: 0.8610
+INFO:root:Test set results: test_loss: 0.3993 test_acc: 0.8798 test_f1: 0.8798
+INFO:root:Saved model in /content/logs/nc/2024_7_1/206
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4807 train_acc: 0.8510 train_f1: 0.8510 time: 0.0141s
+INFO:root:Epoch: 0050 val_loss: 0.4731 val_acc: 0.8549 val_f1: 0.8549
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3917s
+INFO:root:Val set results: val_loss: 0.4712 val_acc: 0.8564 val_f1: 0.8564
+INFO:root:Test set results: test_loss: 0.4113 test_acc: 0.8798 test_f1: 0.8798
+INFO:root:Saved model in /content/logs/nc/2024_7_1/207
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4730 train_acc: 0.8493 train_f1: 0.8493 time: 0.0150s
+INFO:root:Epoch: 0050 val_loss: 0.4402 val_acc: 0.8657 val_f1: 0.8657
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3684s
+INFO:root:Val set results: val_loss: 0.4236 val_acc: 0.8696 val_f1: 0.8696
+INFO:root:Test set results: test_loss: 0.3702 test_acc: 0.8894 test_f1: 0.8894
+INFO:root:Saved model in /content/logs/nc/2024_7_1/208
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4991 train_acc: 0.8275 train_f1: 0.8275 time: 0.0145s
+INFO:root:Epoch: 0050 val_loss: 0.5050 val_acc: 0.8433 val_f1: 0.8433
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3658s
+INFO:root:Val set results: val_loss: 0.4903 val_acc: 0.8485 val_f1: 0.8485
+INFO:root:Test set results: test_loss: 0.4191 test_acc: 0.8685 test_f1: 0.8685
+INFO:root:Saved model in /content/logs/nc/2024_7_1/209
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3084 train_acc: 0.9007 train_f1: 0.9007 time: 0.0140s
+INFO:root:Epoch: 0050 val_loss: 0.5325 val_acc: 0.8646 val_f1: 0.8646
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3704s
+INFO:root:Val set results: val_loss: 0.5359 val_acc: 0.8646 val_f1: 0.8646
+INFO:root:Test set results: test_loss: 0.4715 test_acc: 0.8807 test_f1: 0.8807
+INFO:root:Saved model in /content/logs/nc/2024_7_1/210
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3012 train_acc: 0.9024 train_f1: 0.9024 time: 0.0138s
+INFO:root:Epoch: 0050 val_loss: 0.4288 val_acc: 0.8700 val_f1: 0.8700
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.4221s
+INFO:root:Val set results: val_loss: 0.4315 val_acc: 0.8708 val_f1: 0.8708
+INFO:root:Test set results: test_loss: 0.3604 test_acc: 0.8972 test_f1: 0.8972
+INFO:root:Saved model in /content/logs/nc/2024_7_1/211
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3497 train_acc: 0.8754 train_f1: 0.8754 time: 0.0140s
+INFO:root:Epoch: 0050 val_loss: 0.4743 val_acc: 0.8554 val_f1: 0.8554
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3554s
+INFO:root:Val set results: val_loss: 0.4651 val_acc: 0.8581 val_f1: 0.8581
+INFO:root:Test set results: test_loss: 0.3923 test_acc: 0.8746 test_f1: 0.8746
+INFO:root:Saved model in /content/logs/nc/2024_7_1/212
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3753 train_acc: 0.8702 train_f1: 0.8702 time: 0.0141s
+INFO:root:Epoch: 0050 val_loss: 0.4797 val_acc: 0.8607 val_f1: 0.8607
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3712s
+INFO:root:Val set results: val_loss: 0.4797 val_acc: 0.8607 val_f1: 0.8607
+INFO:root:Test set results: test_loss: 0.4188 test_acc: 0.8737 test_f1: 0.8737
+INFO:root:Saved model in /content/logs/nc/2024_7_1/213
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.3978 train_acc: 0.8615 train_f1: 0.8615 time: 0.0142s
+INFO:root:Epoch: 0050 val_loss: 0.4343 val_acc: 0.8651 val_f1: 0.8651
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.4068s
+INFO:root:Val set results: val_loss: 0.4343 val_acc: 0.8651 val_f1: 0.8651
+INFO:root:Test set results: test_loss: 0.3719 test_acc: 0.8876 test_f1: 0.8876
+INFO:root:Saved model in /content/logs/nc/2024_7_1/214
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4284 train_acc: 0.8537 train_f1: 0.8537 time: 0.0142s
+INFO:root:Epoch: 0050 val_loss: 0.4465 val_acc: 0.8594 val_f1: 0.8594
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3671s
+INFO:root:Val set results: val_loss: 0.4529 val_acc: 0.8597 val_f1: 0.8597
+INFO:root:Test set results: test_loss: 0.3921 test_acc: 0.8720 test_f1: 0.8720
+INFO:root:Saved model in /content/logs/nc/2024_7_1/215
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4938 train_acc: 0.8441 train_f1: 0.8441 time: 0.0142s
+INFO:root:Epoch: 0050 val_loss: 0.4721 val_acc: 0.8524 val_f1: 0.8524
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3974s
+INFO:root:Val set results: val_loss: 0.4741 val_acc: 0.8573 val_f1: 0.8573
+INFO:root:Test set results: test_loss: 0.4218 test_acc: 0.8798 test_f1: 0.8798
+INFO:root:Saved model in /content/logs/nc/2024_7_1/216
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4914 train_acc: 0.8284 train_f1: 0.8284 time: 0.0140s
+INFO:root:Epoch: 0050 val_loss: 0.4569 val_acc: 0.8558 val_f1: 0.8558
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3580s
+INFO:root:Val set results: val_loss: 0.4405 val_acc: 0.8704 val_f1: 0.8704
+INFO:root:Test set results: test_loss: 0.3834 test_acc: 0.8902 test_f1: 0.8902
+INFO:root:Saved model in /content/logs/nc/2024_7_1/217
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of classes: 8
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=8
+      (linear): Linear(in_features=128, out_features=8, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 113032
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4864 train_acc: 0.8406 train_f1: 0.8406 time: 0.0152s
+INFO:root:Epoch: 0050 val_loss: 0.4956 val_acc: 0.8368 val_f1: 0.8368
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.4056s
+INFO:root:Val set results: val_loss: 0.4701 val_acc: 0.8539 val_f1: 0.8539
+INFO:root:Test set results: test_loss: 0.4040 test_acc: 0.8772 test_f1: 0.8772
+INFO:root:Saved model in /content/logs/nc/2024_7_1/218
+
+================================================================================

@@ -1,0 +1,504 @@
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 112000
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9665 train_roc: 0.9661 train_ap: 0.9592 time: 0.1516s
+INFO:root:Epoch: 0050 val_loss: 0.9711 val_roc: 0.9569 val_ap: 0.9522
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.3673s
+INFO:root:Val set results: val_loss: 0.9732 val_roc: 0.9578 val_ap: 0.9527
+INFO:root:Test set results: test_loss: 0.9791 test_roc: 0.9598 test_ap: 0.9517
+INFO:root:Saved model in /content/logs/lp/2024_7_1/144
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 112000
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9528 train_roc: 0.9720 train_ap: 0.9685 time: 0.1544s
+INFO:root:Epoch: 0050 val_loss: 0.9702 val_roc: 0.9575 val_ap: 0.9533
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.2785s
+INFO:root:Val set results: val_loss: 0.9709 val_roc: 0.9577 val_ap: 0.9535
+INFO:root:Test set results: test_loss: 0.9763 test_roc: 0.9598 test_ap: 0.9523
+INFO:root:Saved model in /content/logs/lp/2024_7_1/145
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 112000
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9343 train_roc: 0.9756 train_ap: 0.9715 time: 0.1499s
+INFO:root:Epoch: 0050 val_loss: 0.9727 val_roc: 0.9582 val_ap: 0.9537
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.1351s
+INFO:root:Val set results: val_loss: 0.9758 val_roc: 0.9594 val_ap: 0.9548
+INFO:root:Test set results: test_loss: 0.9806 test_roc: 0.9612 test_ap: 0.9532
+INFO:root:Saved model in /content/logs/lp/2024_7_1/146
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 112000
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9626 train_roc: 0.9642 train_ap: 0.9580 time: 0.1535s
+INFO:root:Epoch: 0050 val_loss: 0.9948 val_roc: 0.9589 val_ap: 0.9526
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.3261s
+INFO:root:Val set results: val_loss: 0.9736 val_roc: 0.9597 val_ap: 0.9528
+INFO:root:Test set results: test_loss: 0.9763 test_roc: 0.9607 test_ap: 0.9520
+INFO:root:Saved model in /content/logs/lp/2024_7_1/147
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 112000
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9891 train_roc: 0.9668 train_ap: 0.9641 time: 0.1500s
+INFO:root:Epoch: 0050 val_loss: 0.9761 val_roc: 0.9553 val_ap: 0.9507
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.1613s
+INFO:root:Val set results: val_loss: 0.9773 val_roc: 0.9588 val_ap: 0.9531
+INFO:root:Test set results: test_loss: 0.9754 test_roc: 0.9600 test_ap: 0.9519
+INFO:root:Saved model in /content/logs/lp/2024_7_1/148
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 112000
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9449 train_roc: 0.9723 train_ap: 0.9691 time: 0.1543s
+INFO:root:Epoch: 0050 val_loss: 0.9831 val_roc: 0.9551 val_ap: 0.9488
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.1509s
+INFO:root:Val set results: val_loss: 0.9888 val_roc: 0.9573 val_ap: 0.9506
+INFO:root:Test set results: test_loss: 0.9916 test_roc: 0.9591 test_ap: 0.9488
+INFO:root:Saved model in /content/logs/lp/2024_7_1/149
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (2): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 128512
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0053 train_roc: 0.9591 train_ap: 0.9508 time: 0.1600s
+INFO:root:Epoch: 0050 val_loss: 1.0069 val_roc: 0.9486 val_ap: 0.9422
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.3894s
+INFO:root:Val set results: val_loss: 1.0069 val_roc: 0.9486 val_ap: 0.9422
+INFO:root:Test set results: test_loss: 1.0129 test_roc: 0.9525 test_ap: 0.9417
+INFO:root:Saved model in /content/logs/lp/2024_7_1/150
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (2): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 128512
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9955 train_roc: 0.9689 train_ap: 0.9662 time: 0.1588s
+INFO:root:Epoch: 0050 val_loss: 1.0081 val_roc: 0.9486 val_ap: 0.9428
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.6218s
+INFO:root:Val set results: val_loss: 1.0081 val_roc: 0.9486 val_ap: 0.9428
+INFO:root:Test set results: test_loss: 1.0127 test_roc: 0.9524 test_ap: 0.9418
+INFO:root:Saved model in /content/logs/lp/2024_7_1/151
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (2): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 128512
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9754 train_roc: 0.9699 train_ap: 0.9677 time: 0.1638s
+INFO:root:Epoch: 0050 val_loss: 1.0097 val_roc: 0.9458 val_ap: 0.9415
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.5394s
+INFO:root:Val set results: val_loss: 1.0105 val_roc: 0.9480 val_ap: 0.9423
+INFO:root:Test set results: test_loss: 1.0145 test_roc: 0.9516 test_ap: 0.9409
+INFO:root:Saved model in /content/logs/lp/2024_7_1/152
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (2): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 128512
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0006 train_roc: 0.9583 train_ap: 0.9504 time: 0.1628s
+INFO:root:Epoch: 0050 val_loss: 1.0036 val_roc: 0.9486 val_ap: 0.9425
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.6725s
+INFO:root:Val set results: val_loss: 1.0036 val_roc: 0.9486 val_ap: 0.9425
+INFO:root:Test set results: test_loss: 1.0082 test_roc: 0.9525 test_ap: 0.9420
+INFO:root:Saved model in /content/logs/lp/2024_7_1/153
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (2): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 128512
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9916 train_roc: 0.9685 train_ap: 0.9661 time: 0.1583s
+INFO:root:Epoch: 0050 val_loss: 1.0058 val_roc: 0.9483 val_ap: 0.9427
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.5308s
+INFO:root:Val set results: val_loss: 1.0087 val_roc: 0.9489 val_ap: 0.9427
+INFO:root:Test set results: test_loss: 1.0131 test_roc: 0.9526 test_ap: 0.9416
+INFO:root:Saved model in /content/logs/lp/2024_7_1/154
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=None
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 7650
+INFO:root:Number of features: 745
+INFO:root:Number of training edges: 60780
+INFO:root:Number of false training edges: 29204295
+INFO:root:Number of validation edges: 3575
+INFO:root:Number of false validation edges: 3575
+INFO:root:Number of test edges: 7150
+INFO:root:Number of false test edges: 7150
+INFO:root:LPModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=745, output_dim=128
+        (linear): Linear(in_features=745, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+      (2): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 128512
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9730 train_roc: 0.9706 train_ap: 0.9676 time: 0.1605s
+INFO:root:Epoch: 0050 val_loss: 1.0070 val_roc: 0.9472 val_ap: 0.9431
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 10.7162s
+INFO:root:Val set results: val_loss: 1.0105 val_roc: 0.9483 val_ap: 0.9430
+INFO:root:Test set results: test_loss: 1.0116 test_roc: 0.9523 test_ap: 0.9422
+INFO:root:Saved model in /content/logs/lp/2024_7_1/155
+
+================================================================================

@@ -1,0 +1,1967 @@
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.6924 train_acc: 0.8051 train_f1: 0.0000 time: 0.0344s
+INFO:root:Epoch: 0050 val_loss: 0.6925 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 3.6674s
+INFO:root:Val set results: val_loss: 2.3119 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 2.0321 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/112
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 131, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.6931 train_acc: 0.8051 train_f1: 0.0000 time: 0.0345s
+INFO:root:Epoch: 0050 val_loss: 0.6931 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 3.7151s
+INFO:root:Val set results: val_loss: 4.8294 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 4.3118 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/120
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.6924 train_acc: 0.8051 train_f1: 0.0000 time: 0.0352s
+INFO:root:Epoch: 0050 val_loss: 0.6924 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 3.6241s
+INFO:root:Val set results: val_loss: 2.3123 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 2.0322 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/121
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.6931 train_acc: 0.8051 train_f1: 0.0000 time: 0.0343s
+INFO:root:Epoch: 0050 val_loss: 0.6931 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 3.6330s
+INFO:root:Val set results: val_loss: 6.1507 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 5.4642 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/122
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 131, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.6915 train_acc: 0.7668 train_f1: 0.1512 time: 0.0363s
+INFO:root:Epoch: 0050 val_loss: 0.4169 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 3.7941s
+INFO:root:Val set results: val_loss: 0.6026 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 0.5806 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/127
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 128516
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 131, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 141, in train
+    val_metrics = model.compute_metrics(embeddings, data, 'val')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.6931 train_acc: 0.8051 train_f1: 0.0000 time: 0.0601s
+INFO:root:Epoch: 0050 val_loss: 0.6931 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 5.6497s
+INFO:root:Val set results: val_loss: 0.6932 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 0.6170 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/130
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 141, in train
+    val_metrics = model.compute_metrics(embeddings, data, 'val')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4684 train_acc: 0.7923 train_f1: 0.0580 time: 0.0620s
+INFO:root:Epoch: 0050 val_loss: 0.4294 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 5.6954s
+INFO:root:Val set results: val_loss: 0.6598 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 0.6054 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/133
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.6931 train_acc: 0.8051 train_f1: 0.0000 time: 0.0600s
+INFO:root:Epoch: 0050 val_loss: 0.6931 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 5.5617s
+INFO:root:Val set results: val_loss: 0.6884 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 0.6127 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/139
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.4661 train_acc: 0.7748 train_f1: 0.1657 time: 0.0611s
+INFO:root:Epoch: 0050 val_loss: 0.3589 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 5.7050s
+INFO:root:Val set results: val_loss: 0.6682 val_acc: 0.7803 val_f1: 0.0000
+INFO:root:Test set results: test_loss: 0.6122 test_acc: 0.8077 test_f1: 0.0000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/142
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 1044
+INFO:root:Number of features: 1000
+INFO:root:Number of classes: 2
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1000 -> 32)
+        (attention_1): SpGraphAttentionLayer (1000 -> 32)
+        (attention_2): SpGraphAttentionLayer (1000 -> 32)
+        (attention_3): SpGraphAttentionLayer (1000 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 2)
+    )
+  )
+)
+INFO:root:Total number of parameters: 145156
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================

@@ -1,0 +1,1368 @@
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0000 train_acc: 1.0000 train_f1: 1.0000 time: 0.0218s
+INFO:root:Epoch: 0050 val_loss: 1.5248 val_acc: 0.7560 val_f1: 0.7560
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.1931s
+INFO:root:Val set results: val_loss: 1.0975 val_acc: 0.8040 val_f1: 0.8040
+INFO:root:Test set results: test_loss: 1.0693 test_acc: 0.8130 test_f1: 0.8130
+INFO:root:Saved model in /content/logs/nc/2024_7_1/42
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0001 train_acc: 1.0000 train_f1: 1.0000 time: 0.0181s
+INFO:root:Epoch: 0050 val_loss: 1.4159 val_acc: 0.7620 val_f1: 0.7620
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.9517s
+INFO:root:Val set results: val_loss: 0.6907 val_acc: 0.7880 val_f1: 0.7880
+INFO:root:Test set results: test_loss: 0.6178 test_acc: 0.7970 test_f1: 0.7970
+INFO:root:Saved model in /content/logs/nc/2024_7_1/43
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0000 train_acc: 1.0000 train_f1: 1.0000 time: 0.0090s
+INFO:root:Epoch: 0050 val_loss: 1.6022 val_acc: 0.7620 val_f1: 0.7620
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.5481s
+INFO:root:Val set results: val_loss: 0.8027 val_acc: 0.7920 val_f1: 0.7920
+INFO:root:Test set results: test_loss: 0.7527 test_acc: 0.8000 test_f1: 0.8000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/44
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0001 train_acc: 1.0000 train_f1: 1.0000 time: 0.0087s
+INFO:root:Epoch: 0050 val_loss: 1.5083 val_acc: 0.7600 val_f1: 0.7600
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.2527s
+INFO:root:Val set results: val_loss: 1.3529 val_acc: 0.8040 val_f1: 0.8040
+INFO:root:Test set results: test_loss: 1.3286 test_acc: 0.7970 test_f1: 0.7970
+INFO:root:Saved model in /content/logs/nc/2024_7_1/45
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0030 train_acc: 1.0000 train_f1: 1.0000 time: 0.0082s
+INFO:root:Epoch: 0050 val_loss: 1.3926 val_acc: 0.7600 val_f1: 0.7600
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.5704s
+INFO:root:Val set results: val_loss: 0.6839 val_acc: 0.7880 val_f1: 0.7880
+INFO:root:Test set results: test_loss: 0.5932 test_acc: 0.8040 test_f1: 0.8040
+INFO:root:Saved model in /content/logs/nc/2024_7_1/46
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0004 train_acc: 1.0000 train_f1: 1.0000 time: 0.0087s
+INFO:root:Epoch: 0050 val_loss: 1.5231 val_acc: 0.7640 val_f1: 0.7640
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.0714s
+INFO:root:Val set results: val_loss: 1.1713 val_acc: 0.7920 val_f1: 0.7920
+INFO:root:Test set results: test_loss: 1.1401 test_acc: 0.7950 test_f1: 0.7950
+INFO:root:Saved model in /content/logs/nc/2024_7_1/47
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0621 train_acc: 0.9571 train_f1: 0.9571 time: 0.0083s
+INFO:root:Epoch: 0050 val_loss: 1.5192 val_acc: 0.7560 val_f1: 0.7560
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.5908s
+INFO:root:Val set results: val_loss: 1.4159 val_acc: 0.8100 val_f1: 0.8100
+INFO:root:Test set results: test_loss: 1.3974 test_acc: 0.8110 test_f1: 0.8110
+INFO:root:Saved model in /content/logs/nc/2024_7_1/48
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0663 train_acc: 0.9571 train_f1: 0.9571 time: 0.0084s
+INFO:root:Epoch: 0050 val_loss: 1.2950 val_acc: 0.7600 val_f1: 0.7600
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.9769s
+INFO:root:Val set results: val_loss: 0.8878 val_acc: 0.8040 val_f1: 0.8040
+INFO:root:Test set results: test_loss: 0.8490 test_acc: 0.8100 test_f1: 0.8100
+INFO:root:Saved model in /content/logs/nc/2024_7_1/49
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0643 train_acc: 0.9571 train_f1: 0.9571 time: 0.0084s
+INFO:root:Epoch: 0050 val_loss: 1.5463 val_acc: 0.7560 val_f1: 0.7560
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.5683s
+INFO:root:Val set results: val_loss: 0.8916 val_acc: 0.8020 val_f1: 0.8020
+INFO:root:Test set results: test_loss: 0.8538 test_acc: 0.8110 test_f1: 0.8110
+INFO:root:Saved model in /content/logs/nc/2024_7_1/50
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0184 train_acc: 1.0000 train_f1: 1.0000 time: 0.0083s
+INFO:root:Epoch: 0050 val_loss: 0.7224 val_acc: 0.7800 val_f1: 0.7800
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.8896s
+INFO:root:Val set results: val_loss: 1.3218 val_acc: 0.8040 val_f1: 0.8040
+INFO:root:Test set results: test_loss: 1.2980 test_acc: 0.8190 test_f1: 0.8190
+INFO:root:Saved model in /content/logs/nc/2024_7_1/51
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0179 train_acc: 1.0000 train_f1: 1.0000 time: 0.0086s
+INFO:root:Epoch: 0050 val_loss: 0.7304 val_acc: 0.7800 val_f1: 0.7800
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.5808s
+INFO:root:Val set results: val_loss: 0.7439 val_acc: 0.7900 val_f1: 0.7900
+INFO:root:Test set results: test_loss: 0.6807 test_acc: 0.8040 test_f1: 0.8040
+INFO:root:Saved model in /content/logs/nc/2024_7_1/52
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0176 train_acc: 1.0000 train_f1: 1.0000 time: 0.0083s
+INFO:root:Epoch: 0050 val_loss: 0.7306 val_acc: 0.7760 val_f1: 0.7760
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.8486s
+INFO:root:Val set results: val_loss: 0.6951 val_acc: 0.7900 val_f1: 0.7900
+INFO:root:Test set results: test_loss: 0.6242 test_acc: 0.8030 test_f1: 0.8030
+INFO:root:Saved model in /content/logs/nc/2024_7_1/53
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0201 train_acc: 1.0000 train_f1: 1.0000 time: 0.0084s
+INFO:root:Epoch: 0050 val_loss: 0.7432 val_acc: 0.7800 val_f1: 0.7800
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.6593s
+INFO:root:Val set results: val_loss: 1.3713 val_acc: 0.8060 val_f1: 0.8060
+INFO:root:Test set results: test_loss: 1.3455 test_acc: 0.8050 test_f1: 0.8050
+INFO:root:Saved model in /content/logs/nc/2024_7_1/54
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0227 train_acc: 1.0000 train_f1: 1.0000 time: 0.0085s
+INFO:root:Epoch: 0050 val_loss: 0.7415 val_acc: 0.7820 val_f1: 0.7820
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.6726s
+INFO:root:Val set results: val_loss: 0.6805 val_acc: 0.7860 val_f1: 0.7860
+INFO:root:Test set results: test_loss: 0.5919 test_acc: 0.8040 test_f1: 0.8040
+INFO:root:Saved model in /content/logs/nc/2024_7_1/55
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0195 train_acc: 1.0000 train_f1: 1.0000 time: 0.0085s
+INFO:root:Epoch: 0050 val_loss: 0.7495 val_acc: 0.7760 val_f1: 0.7760
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.6355s
+INFO:root:Val set results: val_loss: 0.9952 val_acc: 0.7860 val_f1: 0.7860
+INFO:root:Test set results: test_loss: 0.9566 test_acc: 0.7940 test_f1: 0.7940
+INFO:root:Saved model in /content/logs/nc/2024_7_1/56
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.1197 train_acc: 0.9571 train_f1: 0.9571 time: 0.0083s
+INFO:root:Epoch: 0050 val_loss: 0.7526 val_acc: 0.7760 val_f1: 0.7760
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.5978s
+INFO:root:Val set results: val_loss: 1.2406 val_acc: 0.8160 val_f1: 0.8160
+INFO:root:Test set results: test_loss: 1.2166 test_acc: 0.8210 test_f1: 0.8210
+INFO:root:Saved model in /content/logs/nc/2024_7_1/57
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.1248 train_acc: 0.9429 train_f1: 0.9429 time: 0.0085s
+INFO:root:Epoch: 0050 val_loss: 0.7803 val_acc: 0.7680 val_f1: 0.7680
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.6363s
+INFO:root:Val set results: val_loss: 0.9071 val_acc: 0.8000 val_f1: 0.8000
+INFO:root:Test set results: test_loss: 0.8678 test_acc: 0.8050 test_f1: 0.8050
+INFO:root:Saved model in /content/logs/nc/2024_7_1/58
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 184455
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.1188 train_acc: 0.9500 train_f1: 0.9500 time: 0.0088s
+INFO:root:Epoch: 0050 val_loss: 0.7756 val_acc: 0.7780 val_f1: 0.7780
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.6353s
+INFO:root:Val set results: val_loss: 1.0696 val_acc: 0.7980 val_f1: 0.7980
+INFO:root:Test set results: test_loss: 1.0372 test_acc: 0.8110 test_f1: 0.8110
+INFO:root:Saved model in /content/logs/nc/2024_7_1/59
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0000 train_acc: 1.0000 train_f1: 1.0000 time: 0.0099s
+INFO:root:Epoch: 0050 val_loss: 4.7169 val_acc: 0.7740 val_f1: 0.7740
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.7045s
+INFO:root:Val set results: val_loss: 0.9952 val_acc: 0.8060 val_f1: 0.8060
+INFO:root:Test set results: test_loss: 0.9741 test_acc: 0.7990 test_f1: 0.7990
+INFO:root:Saved model in /content/logs/nc/2024_7_1/60
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0000 train_acc: 1.0000 train_f1: 1.0000 time: 0.0102s
+INFO:root:Epoch: 0050 val_loss: 2.4322 val_acc: 0.7620 val_f1: 0.7620
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.7046s
+INFO:root:Val set results: val_loss: 0.8647 val_acc: 0.7960 val_f1: 0.7960
+INFO:root:Test set results: test_loss: 0.8386 test_acc: 0.7790 test_f1: 0.7790
+INFO:root:Saved model in /content/logs/nc/2024_7_1/61
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0000 train_acc: 1.0000 train_f1: 1.0000 time: 0.0104s
+INFO:root:Epoch: 0050 val_loss: 4.8825 val_acc: 0.7660 val_f1: 0.7660
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.7147s
+INFO:root:Val set results: val_loss: 0.8736 val_acc: 0.7980 val_f1: 0.7980
+INFO:root:Test set results: test_loss: 0.8497 test_acc: 0.7820 test_f1: 0.7820
+INFO:root:Saved model in /content/logs/nc/2024_7_1/62
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0143 train_acc: 0.9929 train_f1: 0.9929 time: 0.0105s
+INFO:root:Epoch: 0050 val_loss: 3.8134 val_acc: 0.7640 val_f1: 0.7640
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.8004s
+INFO:root:Val set results: val_loss: 0.6924 val_acc: 0.8040 val_f1: 0.8040
+INFO:root:Test set results: test_loss: 0.6255 test_acc: 0.7940 test_f1: 0.7940
+INFO:root:Saved model in /content/logs/nc/2024_7_1/63
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0065 train_acc: 1.0000 train_f1: 1.0000 time: 0.0135s
+INFO:root:Epoch: 0050 val_loss: 2.3879 val_acc: 0.7700 val_f1: 0.7700
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.8769s
+INFO:root:Val set results: val_loss: 0.6852 val_acc: 0.8000 val_f1: 0.8000
+INFO:root:Test set results: test_loss: 0.6021 test_acc: 0.8090 test_f1: 0.8090
+INFO:root:Saved model in /content/logs/nc/2024_7_1/64
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0164 train_acc: 0.9929 train_f1: 0.9929 time: 0.0105s
+INFO:root:Epoch: 0050 val_loss: 4.3878 val_acc: 0.7300 val_f1: 0.7300
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.7356s
+INFO:root:Val set results: val_loss: 0.8453 val_acc: 0.8020 val_f1: 0.8020
+INFO:root:Test set results: test_loss: 0.7339 test_acc: 0.8080 test_f1: 0.8080
+INFO:root:Saved model in /content/logs/nc/2024_7_1/65
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0945 train_acc: 0.9571 train_f1: 0.9571 time: 0.0130s
+INFO:root:Epoch: 0050 val_loss: 3.1134 val_acc: 0.7220 val_f1: 0.7220
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.2119s
+INFO:root:Val set results: val_loss: 0.9220 val_acc: 0.8040 val_f1: 0.8040
+INFO:root:Test set results: test_loss: 0.9083 test_acc: 0.8060 test_f1: 0.8060
+INFO:root:Saved model in /content/logs/nc/2024_7_1/66
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0664 train_acc: 0.9786 train_f1: 0.9786 time: 0.0102s
+INFO:root:Epoch: 0050 val_loss: 2.3398 val_acc: 0.7340 val_f1: 0.7340
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.7111s
+INFO:root:Val set results: val_loss: 0.6630 val_acc: 0.8040 val_f1: 0.8040
+INFO:root:Test set results: test_loss: 0.6065 test_acc: 0.8050 test_f1: 0.8050
+INFO:root:Saved model in /content/logs/nc/2024_7_1/67
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.1545 train_acc: 0.9571 train_f1: 0.9571 time: 0.0139s
+INFO:root:Epoch: 0050 val_loss: 3.5587 val_acc: 0.7440 val_f1: 0.7440
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.3832s
+INFO:root:Val set results: val_loss: 0.7037 val_acc: 0.8020 val_f1: 0.8020
+INFO:root:Test set results: test_loss: 0.6253 test_acc: 0.7960 test_f1: 0.7960
+INFO:root:Saved model in /content/logs/nc/2024_7_1/68
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0067 train_acc: 1.0000 train_f1: 1.0000 time: 0.0100s
+INFO:root:Epoch: 0050 val_loss: 0.8934 val_acc: 0.7680 val_f1: 0.7680
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.6949s
+INFO:root:Val set results: val_loss: 0.8431 val_acc: 0.8040 val_f1: 0.8040
+INFO:root:Test set results: test_loss: 0.8112 test_acc: 0.7910 test_f1: 0.7910
+INFO:root:Saved model in /content/logs/nc/2024_7_1/69
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0075 train_acc: 1.0000 train_f1: 1.0000 time: 0.0145s
+INFO:root:Epoch: 0050 val_loss: 0.9276 val_acc: 0.7620 val_f1: 0.7620
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.5850s
+INFO:root:Val set results: val_loss: 0.8838 val_acc: 0.7960 val_f1: 0.7960
+INFO:root:Test set results: test_loss: 0.8586 test_acc: 0.7810 test_f1: 0.7810
+INFO:root:Saved model in /content/logs/nc/2024_7_1/70
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0071 train_acc: 1.0000 train_f1: 1.0000 time: 0.0102s
+INFO:root:Epoch: 0050 val_loss: 0.9296 val_acc: 0.7600 val_f1: 0.7600
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.6711s
+INFO:root:Val set results: val_loss: 0.8963 val_acc: 0.8000 val_f1: 0.8000
+INFO:root:Test set results: test_loss: 0.8726 test_acc: 0.7860 test_f1: 0.7860
+INFO:root:Saved model in /content/logs/nc/2024_7_1/71
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0168 train_acc: 1.0000 train_f1: 1.0000 time: 0.0106s
+INFO:root:Epoch: 0050 val_loss: 0.9890 val_acc: 0.7660 val_f1: 0.7660
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.4885s
+INFO:root:Val set results: val_loss: 0.6673 val_acc: 0.8060 val_f1: 0.8060
+INFO:root:Test set results: test_loss: 0.6119 test_acc: 0.7960 test_f1: 0.7960
+INFO:root:Saved model in /content/logs/nc/2024_7_1/72
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0242 train_acc: 0.9929 train_f1: 0.9929 time: 0.0104s
+INFO:root:Epoch: 0050 val_loss: 1.2839 val_acc: 0.7500 val_f1: 0.7500
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.8046s
+INFO:root:Val set results: val_loss: 0.6749 val_acc: 0.7980 val_f1: 0.7980
+INFO:root:Test set results: test_loss: 0.5922 test_acc: 0.8000 test_f1: 0.8000
+INFO:root:Saved model in /content/logs/nc/2024_7_1/73
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0128 train_acc: 1.0000 train_f1: 1.0000 time: 0.0116s
+INFO:root:Epoch: 0050 val_loss: 1.1821 val_acc: 0.7400 val_f1: 0.7400
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 2.2454s
+INFO:root:Val set results: val_loss: 0.6386 val_acc: 0.8000 val_f1: 0.8000
+INFO:root:Test set results: test_loss: 0.5752 test_acc: 0.8030 test_f1: 0.8030
+INFO:root:Saved model in /content/logs/nc/2024_7_1/74
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0717 train_acc: 0.9857 train_f1: 0.9857 time: 0.0102s
+INFO:root:Epoch: 0050 val_loss: 1.0814 val_acc: 0.7740 val_f1: 0.7740
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.7600s
+INFO:root:Val set results: val_loss: 1.0172 val_acc: 0.8020 val_f1: 0.8020
+INFO:root:Test set results: test_loss: 1.0046 test_acc: 0.7970 test_f1: 0.7970
+INFO:root:Saved model in /content/logs/nc/2024_7_1/75
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0819 train_acc: 0.9857 train_f1: 0.9857 time: 0.0106s
+INFO:root:Epoch: 0050 val_loss: 1.2155 val_acc: 0.7560 val_f1: 0.7560
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.9694s
+INFO:root:Val set results: val_loss: 0.6681 val_acc: 0.8020 val_f1: 0.8020
+INFO:root:Test set results: test_loss: 0.6133 test_acc: 0.8010 test_f1: 0.8010
+INFO:root:Saved model in /content/logs/nc/2024_7_1/76
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of classes: 7
+INFO:root:NCModel(
+  (encoder): GCN(
+    (layers): Sequential(
+      (0): GraphConvolution(
+        input_dim=1433, output_dim=128
+        (linear): Linear(in_features=1433, out_features=128, bias=True)
+      )
+      (1): GraphConvolution(
+        input_dim=128, output_dim=128
+        (linear): Linear(in_features=128, out_features=128, bias=True)
+      )
+    )
+  )
+  (decoder): GCNDecoder(
+    (cls): GraphConvolution(
+      input_dim=128, output_dim=7
+      (linear): Linear(in_features=128, out_features=7, bias=True)
+    )
+  )
+)
+INFO:root:Total number of parameters: 200967
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.0688 train_acc: 0.9786 train_f1: 0.9786 time: 0.0148s
+INFO:root:Epoch: 0050 val_loss: 1.3953 val_acc: 0.7360 val_f1: 0.7360
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 1.7315s
+INFO:root:Val set results: val_loss: 1.0416 val_acc: 0.8000 val_f1: 0.8000
+INFO:root:Test set results: test_loss: 1.0238 test_acc: 0.7820 test_f1: 0.7820
+INFO:root:Saved model in /content/logs/nc/2024_7_1/77
+
+================================================================================

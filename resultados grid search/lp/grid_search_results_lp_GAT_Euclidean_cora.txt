@@ -1,0 +1,1709 @@
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9153 train_roc: 0.9896 train_ap: 0.9852 time: 0.0741s
+INFO:root:Epoch: 0050 val_loss: 1.0882 val_roc: 0.9036 val_ap: 0.8955
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.6378s
+INFO:root:Val set results: val_loss: 1.1030 val_roc: 0.9154 val_ap: 0.9043
+INFO:root:Test set results: test_loss: 1.0956 test_roc: 0.9180 test_ap: 0.9117
+INFO:root:Saved model in /content/logs/lp/2024_7_1/72
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.8888 train_roc: 0.9931 train_ap: 0.9906 time: 0.0758s
+INFO:root:Epoch: 0050 val_loss: 1.0145 val_roc: 0.9290 val_ap: 0.9173
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.6629s
+INFO:root:Val set results: val_loss: 1.0145 val_roc: 0.9290 val_ap: 0.9173
+INFO:root:Test set results: test_loss: 0.9821 test_roc: 0.9329 test_ap: 0.9246
+INFO:root:Saved model in /content/logs/lp/2024_7_1/73
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.8885 train_roc: 0.9930 train_ap: 0.9906 time: 0.0734s
+INFO:root:Epoch: 0050 val_loss: 1.0160 val_roc: 0.9308 val_ap: 0.9195
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7413s
+INFO:root:Val set results: val_loss: 1.0160 val_roc: 0.9308 val_ap: 0.9195
+INFO:root:Test set results: test_loss: 0.9807 test_roc: 0.9345 test_ap: 0.9263
+INFO:root:Saved model in /content/logs/lp/2024_7_1/74
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0351 train_roc: 0.9642 train_ap: 0.9542 time: 0.0760s
+INFO:root:Epoch: 0050 val_loss: 1.0727 val_roc: 0.9196 val_ap: 0.9013
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.6597s
+INFO:root:Val set results: val_loss: 1.2697 val_roc: 0.9197 val_ap: 0.9088
+INFO:root:Test set results: test_loss: 1.2759 test_roc: 0.9055 test_ap: 0.9072
+INFO:root:Saved model in /content/logs/lp/2024_7_1/75
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9551 train_roc: 0.9870 train_ap: 0.9803 time: 0.0765s
+INFO:root:Epoch: 0050 val_loss: 1.0376 val_roc: 0.9170 val_ap: 0.9035
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.6853s
+INFO:root:Val set results: val_loss: 1.1269 val_roc: 0.9219 val_ap: 0.9134
+INFO:root:Test set results: test_loss: 1.1060 test_roc: 0.9228 test_ap: 0.9138
+INFO:root:Saved model in /content/logs/lp/2024_7_1/76
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9565 train_roc: 0.9863 train_ap: 0.9798 time: 0.0798s
+INFO:root:Epoch: 0050 val_loss: 1.0369 val_roc: 0.9183 val_ap: 0.9055
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7006s
+INFO:root:Val set results: val_loss: 1.1894 val_roc: 0.9200 val_ap: 0.9147
+INFO:root:Test set results: test_loss: 1.1772 test_roc: 0.9201 test_ap: 0.9133
+INFO:root:Saved model in /content/logs/lp/2024_7_1/77
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2556 train_roc: 0.8078 train_ap: 0.7903 time: 0.0781s
+INFO:root:Epoch: 0050 val_loss: 1.2704 val_roc: 0.8862 val_ap: 0.8656
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.8410s
+INFO:root:Val set results: val_loss: 1.4474 val_roc: 0.8895 val_ap: 0.8835
+INFO:root:Test set results: test_loss: 1.4600 test_roc: 0.8747 test_ap: 0.8772
+INFO:root:Saved model in /content/logs/lp/2024_7_1/78
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1148 train_roc: 0.9228 train_ap: 0.8915 time: 0.0787s
+INFO:root:Epoch: 0050 val_loss: 1.0945 val_roc: 0.8801 val_ap: 0.8482
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7264s
+INFO:root:Val set results: val_loss: 1.1213 val_roc: 0.9145 val_ap: 0.9054
+INFO:root:Test set results: test_loss: 1.1129 test_roc: 0.9202 test_ap: 0.9101
+INFO:root:Saved model in /content/logs/lp/2024_7_1/79
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1267 train_roc: 0.9110 train_ap: 0.8725 time: 0.0791s
+INFO:root:Epoch: 0050 val_loss: 1.0873 val_roc: 0.8829 val_ap: 0.8589
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7338s
+INFO:root:Val set results: val_loss: 1.1933 val_roc: 0.9111 val_ap: 0.9030
+INFO:root:Test set results: test_loss: 1.1748 test_roc: 0.9210 test_ap: 0.9119
+INFO:root:Saved model in /content/logs/lp/2024_7_1/80
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9412 train_roc: 0.9888 train_ap: 0.9851 time: 0.0745s
+INFO:root:Epoch: 0050 val_loss: 1.0675 val_roc: 0.9294 val_ap: 0.9110
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7022s
+INFO:root:Val set results: val_loss: 1.0675 val_roc: 0.9294 val_ap: 0.9110
+INFO:root:Test set results: test_loss: 1.0518 test_roc: 0.9392 test_ap: 0.9318
+INFO:root:Saved model in /content/logs/lp/2024_7_1/81
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.8892 train_roc: 0.9937 train_ap: 0.9914 time: 0.0750s
+INFO:root:Epoch: 0050 val_loss: 1.0126 val_roc: 0.9367 val_ap: 0.9272
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7995s
+INFO:root:Val set results: val_loss: 1.0126 val_roc: 0.9367 val_ap: 0.9272
+INFO:root:Test set results: test_loss: 0.9919 test_roc: 0.9346 test_ap: 0.9270
+INFO:root:Saved model in /content/logs/lp/2024_7_1/82
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.8901 train_roc: 0.9938 train_ap: 0.9915 time: 0.0759s
+INFO:root:Epoch: 0050 val_loss: 1.0112 val_roc: 0.9378 val_ap: 0.9274
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7114s
+INFO:root:Val set results: val_loss: 1.0112 val_roc: 0.9378 val_ap: 0.9274
+INFO:root:Test set results: test_loss: 0.9920 test_roc: 0.9337 test_ap: 0.9266
+INFO:root:Saved model in /content/logs/lp/2024_7_1/83
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0613 train_roc: 0.9622 train_ap: 0.9450 time: 0.0756s
+INFO:root:Epoch: 0050 val_loss: 1.1115 val_roc: 0.9158 val_ap: 0.8838
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7914s
+INFO:root:Val set results: val_loss: 1.2986 val_roc: 0.9213 val_ap: 0.9107
+INFO:root:Test set results: test_loss: 1.2972 test_roc: 0.9107 test_ap: 0.9111
+INFO:root:Saved model in /content/logs/lp/2024_7_1/84
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9685 train_roc: 0.9868 train_ap: 0.9816 time: 0.0758s
+INFO:root:Epoch: 0050 val_loss: 1.0442 val_roc: 0.9240 val_ap: 0.9166
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.6927s
+INFO:root:Val set results: val_loss: 1.0442 val_roc: 0.9240 val_ap: 0.9166
+INFO:root:Test set results: test_loss: 0.9852 test_roc: 0.9297 test_ap: 0.9205
+INFO:root:Saved model in /content/logs/lp/2024_7_1/85
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9674 train_roc: 0.9874 train_ap: 0.9826 time: 0.0818s
+INFO:root:Epoch: 0050 val_loss: 1.0405 val_roc: 0.9231 val_ap: 0.9148
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7491s
+INFO:root:Val set results: val_loss: 1.1891 val_roc: 0.9223 val_ap: 0.9163
+INFO:root:Test set results: test_loss: 1.1767 test_roc: 0.9222 test_ap: 0.9145
+INFO:root:Saved model in /content/logs/lp/2024_7_1/86
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2525 train_roc: 0.8326 train_ap: 0.8048 time: 0.0765s
+INFO:root:Epoch: 0050 val_loss: 1.4406 val_roc: 0.8689 val_ap: 0.8309
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7101s
+INFO:root:Val set results: val_loss: 1.7277 val_roc: 0.8620 val_ap: 0.8706
+INFO:root:Test set results: test_loss: 1.7290 test_roc: 0.8435 test_ap: 0.8581
+INFO:root:Saved model in /content/logs/lp/2024_7_1/87
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1261 train_roc: 0.9035 train_ap: 0.8667 time: 0.0807s
+INFO:root:Epoch: 0050 val_loss: 1.1080 val_roc: 0.8723 val_ap: 0.8409
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.7683s
+INFO:root:Val set results: val_loss: 1.0997 val_roc: 0.9181 val_ap: 0.9079
+INFO:root:Test set results: test_loss: 1.0832 test_roc: 0.9251 test_ap: 0.9143
+INFO:root:Saved model in /content/logs/lp/2024_7_1/88
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 200320
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1321 train_roc: 0.9026 train_ap: 0.8625 time: 0.0786s
+INFO:root:Epoch: 0050 val_loss: 1.0941 val_roc: 0.8816 val_ap: 0.8510
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 6.6776s
+INFO:root:Val set results: val_loss: 1.2113 val_roc: 0.9154 val_ap: 0.9075
+INFO:root:Test set results: test_loss: 1.1983 test_roc: 0.9227 test_ap: 0.9130
+INFO:root:Saved model in /content/logs/lp/2024_7_1/89
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9123 train_roc: 0.9894 train_ap: 0.9850 time: 0.1065s
+INFO:root:Epoch: 0050 val_loss: 1.0809 val_roc: 0.8767 val_ap: 0.8819
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.8037s
+INFO:root:Val set results: val_loss: 1.0889 val_roc: 0.9180 val_ap: 0.9070
+INFO:root:Test set results: test_loss: 1.0764 test_roc: 0.9125 test_ap: 0.9053
+INFO:root:Saved model in /content/logs/lp/2024_7_1/90
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9007 train_roc: 0.9893 train_ap: 0.9859 time: 0.1030s
+INFO:root:Epoch: 0050 val_loss: 1.0409 val_roc: 0.9130 val_ap: 0.9041
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.8696s
+INFO:root:Val set results: val_loss: 1.0409 val_roc: 0.9130 val_ap: 0.9041
+INFO:root:Test set results: test_loss: 0.9870 test_roc: 0.9217 test_ap: 0.9175
+INFO:root:Saved model in /content/logs/lp/2024_7_1/91
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.8955 train_roc: 0.9894 train_ap: 0.9861 time: 0.1020s
+INFO:root:Epoch: 0050 val_loss: 1.0291 val_roc: 0.9215 val_ap: 0.9128
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 9.0524s
+INFO:root:Val set results: val_loss: 1.0291 val_roc: 0.9215 val_ap: 0.9128
+INFO:root:Test set results: test_loss: 0.9786 test_roc: 0.9263 test_ap: 0.9194
+INFO:root:Saved model in /content/logs/lp/2024_7_1/92
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0447 train_roc: 0.9573 train_ap: 0.9441 time: 0.1042s
+INFO:root:Epoch: 0050 val_loss: 1.1200 val_roc: 0.8984 val_ap: 0.8844
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.8784s
+INFO:root:Val set results: val_loss: 1.3062 val_roc: 0.9072 val_ap: 0.8951
+INFO:root:Test set results: test_loss: 1.3054 test_roc: 0.8972 test_ap: 0.8924
+INFO:root:Saved model in /content/logs/lp/2024_7_1/93
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9597 train_roc: 0.9842 train_ap: 0.9781 time: 0.1127s
+INFO:root:Epoch: 0050 val_loss: 1.0588 val_roc: 0.9043 val_ap: 0.8908
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.9006s
+INFO:root:Val set results: val_loss: 1.3539 val_roc: 0.8982 val_ap: 0.8973
+INFO:root:Test set results: test_loss: 1.3124 test_roc: 0.9086 test_ap: 0.9033
+INFO:root:Saved model in /content/logs/lp/2024_7_1/94
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9605 train_roc: 0.9807 train_ap: 0.9726 time: 0.1052s
+INFO:root:Epoch: 0050 val_loss: 1.0559 val_roc: 0.9070 val_ap: 0.8962
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 9.1641s
+INFO:root:Val set results: val_loss: 1.0559 val_roc: 0.9070 val_ap: 0.8962
+INFO:root:Test set results: test_loss: 0.9719 test_roc: 0.9263 test_ap: 0.9165
+INFO:root:Saved model in /content/logs/lp/2024_7_1/95
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.3062 train_roc: 0.7484 train_ap: 0.7356 time: 0.1055s
+INFO:root:Epoch: 0050 val_loss: 1.5038 val_roc: 0.7950 val_ap: 0.7926
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.9404s
+INFO:root:Val set results: val_loss: 1.7312 val_roc: 0.8569 val_ap: 0.8679
+INFO:root:Test set results: test_loss: 1.7581 test_roc: 0.8322 test_ap: 0.8516
+INFO:root:Saved model in /content/logs/lp/2024_7_1/96
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1257 train_roc: 0.8955 train_ap: 0.8615 time: 0.1098s
+INFO:root:Epoch: 0050 val_loss: 1.1628 val_roc: 0.8354 val_ap: 0.8015
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.8027s
+INFO:root:Val set results: val_loss: 1.2610 val_roc: 0.8794 val_ap: 0.8740
+INFO:root:Test set results: test_loss: 1.2373 test_roc: 0.8907 test_ap: 0.8823
+INFO:root:Saved model in /content/logs/lp/2024_7_1/97
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9447 train_roc: 0.9872 train_ap: 0.9822 time: 0.1021s
+INFO:root:Epoch: 0050 val_loss: 1.0609 val_roc: 0.9292 val_ap: 0.9151
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.8416s
+INFO:root:Val set results: val_loss: 1.0609 val_roc: 0.9292 val_ap: 0.9151
+INFO:root:Test set results: test_loss: 1.0638 test_roc: 0.9279 test_ap: 0.9194
+INFO:root:Saved model in /content/logs/lp/2024_7_1/99
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9061 train_roc: 0.9879 train_ap: 0.9849 time: 0.1022s
+INFO:root:Epoch: 0050 val_loss: 1.0337 val_roc: 0.9171 val_ap: 0.9081
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.8959s
+INFO:root:Val set results: val_loss: 1.0337 val_roc: 0.9171 val_ap: 0.9081
+INFO:root:Test set results: test_loss: 0.9753 test_roc: 0.9264 test_ap: 0.9178
+INFO:root:Saved model in /content/logs/lp/2024_7_1/100
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9038 train_roc: 0.9886 train_ap: 0.9857 time: 0.1056s
+INFO:root:Epoch: 0050 val_loss: 1.0273 val_roc: 0.9226 val_ap: 0.9129
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 9.0026s
+INFO:root:Val set results: val_loss: 1.0273 val_roc: 0.9226 val_ap: 0.9129
+INFO:root:Test set results: test_loss: 0.9740 test_roc: 0.9289 test_ap: 0.9194
+INFO:root:Saved model in /content/logs/lp/2024_7_1/101
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.0705 train_roc: 0.9536 train_ap: 0.9338 time: 0.1063s
+INFO:root:Epoch: 0050 val_loss: 1.1550 val_roc: 0.8923 val_ap: 0.8651
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.9599s
+INFO:root:Val set results: val_loss: 1.2979 val_roc: 0.9143 val_ap: 0.9002
+INFO:root:Test set results: test_loss: 1.2822 test_roc: 0.9084 test_ap: 0.9013
+INFO:root:Saved model in /content/logs/lp/2024_7_1/102
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9644 train_roc: 0.9874 train_ap: 0.9820 time: 0.1052s
+INFO:root:Epoch: 0050 val_loss: 1.0594 val_roc: 0.9134 val_ap: 0.9080
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.9466s
+INFO:root:Val set results: val_loss: 1.0522 val_roc: 0.9163 val_ap: 0.9090
+INFO:root:Test set results: test_loss: 0.9917 test_roc: 0.9266 test_ap: 0.9178
+INFO:root:Saved model in /content/logs/lp/2024_7_1/103
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 0.9666 train_roc: 0.9873 train_ap: 0.9825 time: 0.1069s
+INFO:root:Epoch: 0050 val_loss: 1.0496 val_roc: 0.9155 val_ap: 0.9090
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 9.2640s
+INFO:root:Val set results: val_loss: 1.0443 val_roc: 0.9166 val_ap: 0.9092
+INFO:root:Test set results: test_loss: 0.9892 test_roc: 0.9293 test_ap: 0.9197
+INFO:root:Saved model in /content/logs/lp/2024_7_1/104
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.2905 train_roc: 0.7551 train_ap: 0.7539 time: 0.1064s
+INFO:root:Epoch: 0050 val_loss: 2.0017 val_roc: 0.8089 val_ap: 0.8014
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.9943s
+INFO:root:Val set results: val_loss: 2.1246 val_roc: 0.8783 val_ap: 0.8786
+INFO:root:Test set results: test_loss: 2.1162 test_roc: 0.8755 test_ap: 0.8831
+INFO:root:Saved model in /content/logs/lp/2024_7_1/105
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1137 train_roc: 0.9141 train_ap: 0.8821 time: 0.1057s
+INFO:root:Epoch: 0050 val_loss: 1.1044 val_roc: 0.8781 val_ap: 0.8536
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.8529s
+INFO:root:Val set results: val_loss: 1.2558 val_roc: 0.8828 val_ap: 0.8790
+INFO:root:Test set results: test_loss: 1.2081 test_roc: 0.9041 test_ap: 0.8936
+INFO:root:Saved model in /content/logs/lp/2024_7_1/106
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cuda:0
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 2708
+INFO:root:Number of features: 1433
+INFO:root:Number of training edges: 4488
+INFO:root:Number of false training edges: 3663498
+INFO:root:Number of validation edges: 263
+INFO:root:Number of false validation edges: 263
+INFO:root:Number of test edges: 527
+INFO:root:Number of false test edges: 527
+INFO:root:LPModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (1433 -> 32)
+        (attention_1): SpGraphAttentionLayer (1433 -> 32)
+        (attention_2): SpGraphAttentionLayer (1433 -> 32)
+        (attention_3): SpGraphAttentionLayer (1433 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+      (2): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (dc): FermiDiracDecoder()
+)
+INFO:root:Total number of parameters: 216960
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0050 lr: 0.0025 train_loss: 1.1256 train_roc: 0.9058 train_ap: 0.8651 time: 0.1024s
+INFO:root:Epoch: 0050 val_loss: 1.1155 val_roc: 0.8739 val_ap: 0.8459
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 8.8272s
+INFO:root:Val set results: val_loss: 1.4549 val_roc: 0.8724 val_ap: 0.8728
+INFO:root:Test set results: test_loss: 1.4435 test_roc: 0.8814 test_ap: 0.8800
+INFO:root:Saved model in /content/logs/lp/2024_7_1/107
+
+================================================================================

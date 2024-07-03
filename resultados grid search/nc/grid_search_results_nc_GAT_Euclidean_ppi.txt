@@ -1,0 +1,1736 @@
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4292 train_acc: 0.6850 train_f1: 0.6850 time: 39.7871s
+INFO:root:Epoch: 0010 val_loss: 1.4952 val_acc: 0.6646 val_f1: 0.6646
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 414.5432s
+INFO:root:Val set results: val_loss: 1.6205 val_acc: 0.6675 val_f1: 0.6675
+INFO:root:Test set results: test_loss: 1.6046 test_acc: 0.6723 test_f1: 0.6723
+INFO:root:Saved model in /content/logs/nc/2024_7_2/72
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4372 train_acc: 0.6847 train_f1: 0.6847 time: 38.9836s
+INFO:root:Epoch: 0010 val_loss: 1.4917 val_acc: 0.6647 val_f1: 0.6647
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 406.0473s
+INFO:root:Val set results: val_loss: 1.6521 val_acc: 0.6666 val_f1: 0.6666
+INFO:root:Test set results: test_loss: 1.6390 test_acc: 0.6716 test_f1: 0.6716
+INFO:root:Saved model in /content/logs/nc/2024_7_2/73
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4390 train_acc: 0.6826 train_f1: 0.6826 time: 41.6297s
+INFO:root:Epoch: 0010 val_loss: 1.4828 val_acc: 0.6629 val_f1: 0.6629
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 424.3324s
+INFO:root:Val set results: val_loss: 1.7502 val_acc: 0.6666 val_f1: 0.6666
+INFO:root:Test set results: test_loss: 1.7432 test_acc: 0.6714 test_f1: 0.6714
+INFO:root:Saved model in /content/logs/nc/2024_7_2/74
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.8715 train_acc: 0.5654 train_f1: 0.5654 time: 43.1762s
+INFO:root:Epoch: 0010 val_loss: 1.8304 val_acc: 0.6672 val_f1: 0.6672
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 442.9486s
+INFO:root:Val set results: val_loss: 1.6305 val_acc: 0.6675 val_f1: 0.6675
+INFO:root:Test set results: test_loss: 1.6064 test_acc: 0.6725 test_f1: 0.6725
+INFO:root:Saved model in /content/logs/nc/2024_7_2/75
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.8557 train_acc: 0.5526 train_f1: 0.5526 time: 42.7368s
+INFO:root:Epoch: 0010 val_loss: 1.6694 val_acc: 0.6626 val_f1: 0.6626
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 447.1598s
+INFO:root:Val set results: val_loss: 1.5268 val_acc: 0.6658 val_f1: 0.6658
+INFO:root:Test set results: test_loss: 1.5100 test_acc: 0.6707 test_f1: 0.6707
+INFO:root:Saved model in /content/logs/nc/2024_7_2/76
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.9074 train_acc: 0.5526 train_f1: 0.5526 time: 49.4237s
+INFO:root:Epoch: 0010 val_loss: 1.7688 val_acc: 0.6641 val_f1: 0.6641
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 450.9959s
+INFO:root:Val set results: val_loss: 1.5468 val_acc: 0.6658 val_f1: 0.6658
+INFO:root:Test set results: test_loss: 1.5262 test_acc: 0.6703 test_f1: 0.6703
+INFO:root:Saved model in /content/logs/nc/2024_7_2/77
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.6196 train_acc: 0.4405 train_f1: 0.4405 time: 41.3983s
+INFO:root:Epoch: 0010 val_loss: 2.0801 val_acc: 0.6632 val_f1: 0.6632
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 439.3182s
+INFO:root:Val set results: val_loss: 1.8451 val_acc: 0.6650 val_f1: 0.6650
+INFO:root:Test set results: test_loss: 1.8252 test_acc: 0.6693 test_f1: 0.6693
+INFO:root:Saved model in /content/logs/nc/2024_7_2/79
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4261 train_acc: 0.6851 train_f1: 0.6851 time: 41.1667s
+INFO:root:Epoch: 0010 val_loss: 1.4936 val_acc: 0.6647 val_f1: 0.6647
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 435.9257s
+INFO:root:Val set results: val_loss: 1.6200 val_acc: 0.6678 val_f1: 0.6678
+INFO:root:Test set results: test_loss: 1.6041 test_acc: 0.6727 test_f1: 0.6727
+INFO:root:Saved model in /content/logs/nc/2024_7_2/81
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4345 train_acc: 0.6849 train_f1: 0.6849 time: 41.6195s
+INFO:root:Epoch: 0010 val_loss: 1.4897 val_acc: 0.6646 val_f1: 0.6646
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 436.5478s
+INFO:root:Val set results: val_loss: 1.6497 val_acc: 0.6667 val_f1: 0.6667
+INFO:root:Test set results: test_loss: 1.6365 test_acc: 0.6716 test_f1: 0.6716
+INFO:root:Saved model in /content/logs/nc/2024_7_2/82
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4379 train_acc: 0.6826 train_f1: 0.6826 time: 41.4190s
+INFO:root:Epoch: 0010 val_loss: 1.4826 val_acc: 0.6629 val_f1: 0.6629
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 440.3600s
+INFO:root:Val set results: val_loss: 1.7474 val_acc: 0.6666 val_f1: 0.6666
+INFO:root:Test set results: test_loss: 1.7401 test_acc: 0.6714 test_f1: 0.6714
+INFO:root:Saved model in /content/logs/nc/2024_7_2/83
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.8711 train_acc: 0.5656 train_f1: 0.5656 time: 41.3236s
+INFO:root:Epoch: 0010 val_loss: 1.8345 val_acc: 0.6673 val_f1: 0.6673
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 433.6609s
+INFO:root:Val set results: val_loss: 1.6318 val_acc: 0.6675 val_f1: 0.6675
+INFO:root:Test set results: test_loss: 1.6077 test_acc: 0.6725 test_f1: 0.6725
+INFO:root:Saved model in /content/logs/nc/2024_7_2/84
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.8532 train_acc: 0.5532 train_f1: 0.5532 time: 42.7684s
+INFO:root:Epoch: 0010 val_loss: 1.6728 val_acc: 0.6626 val_f1: 0.6626
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 448.2167s
+INFO:root:Val set results: val_loss: 1.5255 val_acc: 0.6656 val_f1: 0.6656
+INFO:root:Test set results: test_loss: 1.5087 test_acc: 0.6707 test_f1: 0.6707
+INFO:root:Saved model in /content/logs/nc/2024_7_2/85
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.9064 train_acc: 0.5530 train_f1: 0.5530 time: 42.1930s
+INFO:root:Epoch: 0010 val_loss: 1.7732 val_acc: 0.6643 val_f1: 0.6643
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 441.7711s
+INFO:root:Val set results: val_loss: 1.5479 val_acc: 0.6658 val_f1: 0.6658
+INFO:root:Test set results: test_loss: 1.5271 test_acc: 0.6702 test_f1: 0.6702
+INFO:root:Saved model in /content/logs/nc/2024_7_2/86
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.6158 train_acc: 0.4401 train_f1: 0.4401 time: 42.2798s
+INFO:root:Epoch: 0010 val_loss: 2.0886 val_acc: 0.6630 val_f1: 0.6630
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 476.9077s
+INFO:root:Val set results: val_loss: 1.8508 val_acc: 0.6650 val_f1: 0.6650
+INFO:root:Test set results: test_loss: 1.8308 test_acc: 0.6693 test_f1: 0.6693
+INFO:root:Saved model in /content/logs/nc/2024_7_2/88
+
+================================================================================
+Experiment with num_layers=2, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 10036
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.3713 train_acc: 0.6921 train_f1: 0.6921 time: 110.9346s
+INFO:root:Epoch: 0010 val_loss: 1.4395 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 879.5671s
+INFO:root:Val set results: val_loss: 1.5496 val_acc: 0.6692 val_f1: 0.6692
+INFO:root:Test set results: test_loss: 1.5316 test_acc: 0.6743 test_f1: 0.6743
+INFO:root:Saved model in /content/logs/nc/2024_7_2/90
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4544 train_acc: 0.6871 train_f1: 0.6871 time: 77.0541s
+INFO:root:Epoch: 0010 val_loss: 1.5286 val_acc: 0.6663 val_f1: 0.6663
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 851.3388s
+INFO:root:Val set results: val_loss: 1.4516 val_acc: 0.6669 val_f1: 0.6669
+INFO:root:Test set results: test_loss: 1.4402 test_acc: 0.6709 test_f1: 0.6709
+INFO:root:Saved model in /content/logs/nc/2024_7_2/91
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4608 train_acc: 0.6886 train_f1: 0.6886 time: 78.8917s
+INFO:root:Epoch: 0010 val_loss: 1.5427 val_acc: 0.6670 val_f1: 0.6670
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 854.3910s
+INFO:root:Val set results: val_loss: 1.4401 val_acc: 0.6676 val_f1: 0.6676
+INFO:root:Test set results: test_loss: 1.4275 test_acc: 0.6718 test_f1: 0.6718
+INFO:root:Saved model in /content/logs/nc/2024_7_2/92
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.8193 train_acc: 0.5704 train_f1: 0.5704 time: 96.1541s
+INFO:root:Epoch: 0010 val_loss: 1.7419 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 910.3730s
+INFO:root:Val set results: val_loss: 1.7224 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 1.7063 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/93
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.8664 train_acc: 0.5736 train_f1: 0.5736 time: 77.8517s
+INFO:root:Epoch: 0010 val_loss: 1.6980 val_acc: 0.6660 val_f1: 0.6660
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 843.0017s
+INFO:root:Val set results: val_loss: 1.6359 val_acc: 0.6664 val_f1: 0.6664
+INFO:root:Test set results: test_loss: 1.6204 test_acc: 0.6698 test_f1: 0.6698
+INFO:root:Saved model in /content/logs/nc/2024_7_2/94
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.2, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.6880 train_acc: 0.6534 train_f1: 0.6534 time: 77.4129s
+INFO:root:Epoch: 0010 val_loss: 1.7636 val_acc: 0.6676 val_f1: 0.6676
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 858.3397s
+INFO:root:Val set results: val_loss: 1.8999 val_acc: 0.6676 val_f1: 0.6676
+INFO:root:Test set results: test_loss: 1.8932 test_acc: 0.6723 test_f1: 0.6723
+INFO:root:Saved model in /content/logs/nc/2024_7_2/97
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0, dropout=0.5, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.3791 train_acc: 0.6921 train_f1: 0.6921 time: 78.3278s
+INFO:root:Epoch: 0010 val_loss: 1.4395 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 877.5465s
+INFO:root:Val set results: val_loss: 1.5747 val_acc: 0.6692 val_f1: 0.6692
+INFO:root:Test set results: test_loss: 1.5563 test_acc: 0.6745 test_f1: 0.6745
+INFO:root:Saved model in /content/logs/nc/2024_7_2/99
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4513 train_acc: 0.6870 train_f1: 0.6870 time: 105.3559s
+INFO:root:Epoch: 0010 val_loss: 1.5273 val_acc: 0.6661 val_f1: 0.6661
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 912.2129s
+INFO:root:Val set results: val_loss: 1.4544 val_acc: 0.6670 val_f1: 0.6670
+INFO:root:Test set results: test_loss: 1.4427 test_acc: 0.6707 test_f1: 0.6707
+INFO:root:Saved model in /content/logs/nc/2024_7_2/100
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.4581 train_acc: 0.6887 train_f1: 0.6887 time: 79.0965s
+INFO:root:Epoch: 0010 val_loss: 1.5448 val_acc: 0.6672 val_f1: 0.6672
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 872.0411s
+INFO:root:Val set results: val_loss: 1.4383 val_acc: 0.6681 val_f1: 0.6681
+INFO:root:Test set results: test_loss: 1.4258 test_acc: 0.6718 test_f1: 0.6718
+INFO:root:Saved model in /content/logs/nc/2024_7_2/101
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.8200 train_acc: 0.5705 train_f1: 0.5705 time: 78.4604s
+INFO:root:Epoch: 0010 val_loss: 1.7475 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 886.5257s
+INFO:root:Val set results: val_loss: 1.7219 val_acc: 0.6684 val_f1: 0.6684
+INFO:root:Test set results: test_loss: 1.7058 test_acc: 0.6736 test_f1: 0.6736
+INFO:root:Saved model in /content/logs/nc/2024_7_2/102
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 1.8662 train_acc: 0.5719 train_f1: 0.5719 time: 80.4560s
+INFO:root:Epoch: 0010 val_loss: 1.6967 val_acc: 0.6663 val_f1: 0.6663
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 928.7164s
+INFO:root:Val set results: val_loss: 1.6354 val_acc: 0.6666 val_f1: 0.6666
+INFO:root:Test set results: test_loss: 1.6200 test_acc: 0.6700 test_f1: 0.6700
+INFO:root:Saved model in /content/logs/nc/2024_7_2/103
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.2, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py:744: UserWarning: Error detected in DivBackward0. Traceback of forward call that caused the error:
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 123, in train
+    train_metrics = model.compute_metrics(embeddings, data, 'train')
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 173, in compute_metrics
+    output = self.decode(embeddings, data['adj_train_norm'], idx)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 168, in decode
+    output = self.decoder.decode(h, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/decoders.py", line 24, in decode
+    probs, _ = self.cls.forward(input)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 133, in forward
+    h_prime = h_prime.div(e_rowsum)
+ (Triggered internally at ../torch/csrc/autograd/python_anomaly_mode.cpp:111.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 124, in train
+    train_metrics['loss'].backward()
+  File "/usr/local/lib/python3.10/dist-packages/torch/_tensor.py", line 525, in backward
+    torch.autograd.backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/__init__.py", line 267, in backward
+    _engine_run_backward(
+  File "/usr/local/lib/python3.10/dist-packages/torch/autograd/graph.py", line 744, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: Function 'DivBackward0' returned nan values in its 1th output.
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=relu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=tanh
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+/usr/local/lib/python3.10/dist-packages/torch/optim/lr_scheduler.py:402: UserWarning: To get the last learning rate computed by the scheduler, please use `get_last_lr()`.
+  warnings.warn("To get the last learning rate computed by the scheduler, "
+INFO:root:Epoch: 0010 lr: 0.0025 train_loss: 2.6829 train_acc: 0.6533 train_f1: 0.6533 time: 91.4448s
+INFO:root:Epoch: 0010 val_loss: 1.7655 val_acc: 0.6676 val_f1: 0.6676
+INFO:root:Optimization Finished!
+INFO:root:Total time elapsed: 869.3653s
+INFO:root:Val set results: val_loss: 1.8963 val_acc: 0.6676 val_f1: 0.6676
+INFO:root:Test set results: test_loss: 1.8892 test_acc: 0.6723 test_f1: 0.6723
+INFO:root:Saved model in /content/logs/nc/2024_7_2/106
+
+================================================================================
+Experiment with num_layers=3, weight_decay=0.001, dropout=0.5, activation=elu
+INFO:root:Using: cpu
+INFO:root:Using seed 1234.
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:446: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(labels)
+/content/GCN-Pseudo-Riemannian-Manifold/utils/data_utils.py:111: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at ../torch/csrc/utils/tensor_new.cpp:621.)
+  return torch.sparse.FloatTensor(indices, values, shape)
+INFO:root:Number of nodes: 56944
+INFO:root:Number of features: 50
+INFO:root:Number of classes: 26
+INFO:root:NCModel(
+  (encoder): GAT(
+    (layers): Sequential(
+      (0): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (50 -> 32)
+        (attention_1): SpGraphAttentionLayer (50 -> 32)
+        (attention_2): SpGraphAttentionLayer (50 -> 32)
+        (attention_3): SpGraphAttentionLayer (50 -> 32)
+      )
+      (1): GraphAttentionLayer(
+        (attention_0): SpGraphAttentionLayer (128 -> 32)
+        (attention_1): SpGraphAttentionLayer (128 -> 32)
+        (attention_2): SpGraphAttentionLayer (128 -> 32)
+        (attention_3): SpGraphAttentionLayer (128 -> 32)
+      )
+    )
+  )
+  (decoder): GATDecoder(
+    (cls): GraphAttentionLayer(
+      (attention_0): SpGraphAttentionLayer (128 -> 26)
+    )
+  )
+)
+INFO:root:Total number of parameters: 26676
+Traceback (most recent call last):
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 178, in <module>
+    train(args)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/train.py", line 122, in train
+    embeddings = model.encode(data['features'], data['adj_train_norm'])
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/base_models.py", line 89, in encode
+    h = self.encoder.encode(x, adj)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/models/encoders.py", line 27, in encode
+    output, _ = self.layers.forward(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in forward
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 161, in <listcomp>
+    h = torch.cat([att(x, adj) for att in self.attentions], dim=1)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/content/GCN-Pseudo-Riemannian-Manifold/layers/att_layers.py", line 135, in forward
+    assert not torch.isnan(h_prime).any()
+AssertionError
+
+================================================================================
