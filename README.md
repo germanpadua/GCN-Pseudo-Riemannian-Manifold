@@ -47,7 +47,6 @@ optional arguments:
   --save SAVE           1 to save model and logs and 0 otherwise
   --save-dir SAVE_DIR   path to save training logs and model weights (defaults
                         to logs/task/date/run/)
-  --sweep-c SWEEP_C
   --lr-reduce-freq LR_REDUCE_FREQ
                         reduce lr every lr-reduce-freq or None to keep lr
                         constant
