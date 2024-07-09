@@ -1,3 +1,4 @@
+ 
 """Euclidean manifold."""
 
 from manifolds.base import Manifold
@@ -8,7 +9,7 @@ class Euclidean(Manifold):
     Euclidean Manifold class.
     """
 
-    def __init__(self,space_dim=None, time_dim=None):
+    def __init__(self):
         super(Euclidean, self).__init__()
         self.name = 'Euclidean'
 
@@ -55,7 +56,7 @@ class Euclidean(Manifold):
         w.data.uniform_(-irange, irange)
         return w
 
-    def inner(self, u, v=None, keepdim=False):
+    def inner(self, p, c, u, v=None, keepdim=False):
         if v is None:
             v = u
         return (u * v).sum(dim=-1, keepdim=keepdim)
