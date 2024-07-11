@@ -1,4 +1,3 @@
- 
 """Euclidean manifold."""
 
 from manifolds.base import Manifold
@@ -9,9 +8,11 @@ class Euclidean(Manifold):
     Euclidean Manifold class.
     """
 
-    def __init__(self):
+    def __init__(self, space_dim=None, time_dim=None):
         super(Euclidean, self).__init__()
         self.name = 'Euclidean'
+        self.space_dim = space_dim
+        self.time_dim = time_dim
 
     def normalize(self, p):
         dim = p.size(-1)
