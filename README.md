@@ -1,26 +1,22 @@
-# Pseudo-Riemannian Graph Convolutional Networks
+# Redes Neuronales para Grafos en Variedades Pseudo-riemannianas
 
-This repository is the official implementation of [Pseudo-Riemannian Graph Convolutional Networks](https://arxiv.org/abs/2106.03134) in PyTorch, based on [HGCN](https://github.com/HazyResearch/hgcn) implementation. 
+Este repositorio es la implementación oficial del Trabajo Fin de Grado "Redes neuronales para grafos en variedades pseudo-riemannianas", del Doble Grado en Ingeniería Informática y Matemáticas, realizado por Germán Padua en el año 2024. Este código está basado en en la implementación de [Pseudo-Riemannian Graph Convolutional Networks](https://arxiv.org/abs/2106.03134) en PyTorch, basado a su vez en [HGCN](https://github.com/HazyResearch/hgcn). 
 
-## Requirements
+## Ejecución
 
-To install requirements:
+La ejecución del proyecto se encuentra en el cuaderno Ejecucion_Redes_neuronales_para_grafos_en_variedades_pseudo_riemannianas.ipynb
 
-```setup
-pip install -r requirements.txt
-```
-
-Folder
+Directorios
 
 ```
-The data/ folder contains all the required datasets.
-The layers/ folder contains basic operations of euclidean layers, hyperbolic and pseudo-hyperbolic layers.
-The manifolds/ folder contains basic operations of all manifolds.
-The models/ folder contains the implementation of baselines, which consist of encoder and decoder.
-The utils/ folder contains the basic utils for data/eval/train, besides, hyperbolicity is used for calculating the distribution of hyperbolicity.
+La carpeta data/ contiene todos los datasets utilizados. 
+La carpeta layers/ contiene las operaciones básicas para las capas euclídeas, hiperbólicas y pseudo-hiperbólicas.
+La carpeta manifolds/ contiene las operaciones básicas para todas las variedades.
+La carpeta models/ contiene la implementación de los modelos estudiados, que consisten en un codificador y en un decodificador.
+La carpeta utils/ contiene las utilidades necesarias para la lectura de los datos, el entranamiento y la evaluación.
 ```
 
-## Training, evaluation and results
+## Parámetros de entrenamiento, evaluación y resultados
 
 
 ```python train.py```
@@ -97,25 +93,9 @@ optional arguments:
                         seed for data splits (train/test/val)
 ```
 
-## Citation
+## El código incluye forks de los siguientes repositorios
 
-If you find this code useful, please cite the following paper: 
-```
-@inproceedings{Xiong2021Pseudo,
-  title={Pseudo-Riemannian Graph Convolutional Networks},
-  author={Bo Xiong and Shichao Zhu and Nico Potyka and Shirui Pan and Chuan Zhou and Steffen Staab},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2022}
-}
-```
-
-## Some of the code was forked from the following repositories
-
+ * [Pseudo-Riemannian Graph Convolutional Networks](https://github.com/xiongbo010/QGCN)
  * [hgcn](https://github.com/HazyResearch/hgcn)
  * [ultrahyperbolic embeddings](https://github.com/MarcTLaw/UltrahyperbolicRepresentation)
  * [geoopt](https://github.com/geoopt/geoopt)
-
-
-## Contributing
-
->📋  Pick a licence and describe how to contribute to your code repository. 
